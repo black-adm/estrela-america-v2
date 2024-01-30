@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import './assets/css/globals.css'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const icomoon = localFont({
+  src: [{ path: './assets/fonts/icomoon.ttf' }],
+  variable: '--font-icomoon',
+})
 
 export const metadata: Metadata = {
   title: 'Estrela América',
@@ -15,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br" className={`${icomoon.variable} font-sans`}>
+      <body>{children}</body>
     </html>
   )
 }
