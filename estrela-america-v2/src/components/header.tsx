@@ -2,12 +2,13 @@ import Image from 'next/image'
 import { SocialBanner } from './social-banner'
 import Link from 'next/link'
 import { Heart, ShoppingBag } from 'lucide-react'
+import { SearchInput } from './search-input'
 
 export function Header() {
   return (
     <>
       <SocialBanner />
-      <header className="bg-white">
+      <header className="bg-white pt-2">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -22,6 +23,10 @@ export function Header() {
                 alt="logo"
               />
             </Link>
+          </div>
+
+          <div className="hidden lg:flex lg:items-center lg:justify-center">
+            <SearchInput />
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end">
