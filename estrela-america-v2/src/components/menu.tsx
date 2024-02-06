@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
 import {
@@ -40,7 +39,7 @@ const components: { title: string; href: string }[] = [
 export function Menu() {
   return (
     <>
-      <div className="p-8 max-w-full h-auto border-b-2 border-gray-200">
+      <div className="p-8 max-w-full h-auto">
         <div className="mx-auto max-w-6xl flex justify-center items-center py-4 bg-primary-orange rounded-lg">
           <NavigationMenu>
             <NavigationMenuList>

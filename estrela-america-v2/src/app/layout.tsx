@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './assets/css/globals.css'
-import localFont from 'next/font/local'
+import { Ubuntu } from 'next/font/google'
 
-const icomoon = localFont({
-  src: [{ path: './assets/fonts/icomoon.ttf' }],
-  variable: '--font-icomoon',
+const ubuntu = Ubuntu({
+  weight: ['300', '500', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" className={`${icomoon.variable} font-sans`}>
+    <html lang="pt-br" className={ubuntu.className}>
       <body>{children}</body>
     </html>
   )
