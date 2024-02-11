@@ -9,7 +9,7 @@ export function SearchInput() {
           <input
             type="text"
             placeholder="Pesquisar produtos ..."
-            className="w-full ml-2.5 mb-1 py-1 px-4 text-sm text-zinc-600 font-light lg:text-base lg:mb-0 outline-none placeholder:text-sm"
+            className="w-full ml-2.5 py-1.5 px-4 text-sm text-zinc-600 font-light lg:text-base lg:mb-0 outline-none placeholder:text-sm"
           />
           <div>
             <Button className="bg-black hover:bg-primary-blue focus:bg-primary-blue rounded-none rounded-r-full">

@@ -35,7 +35,7 @@ export function BannerCarousel() {
       <div className="mt-6 flex justify-center items-center">
         <Carousel
           plugins={[plugin.current]}
-          className="w-full max-w-7xl"
+          className="max-w-6xl"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
