@@ -32,7 +32,7 @@ export function BannerCarousel() {
 
   return (
     <>
-      <div className="mt-6 flex justify-center items-center">
+      <div className="py-6 bg-gray-50 flex justify-center items-center">
         <Carousel
           plugins={[plugin.current]}
           className="max-w-6xl"

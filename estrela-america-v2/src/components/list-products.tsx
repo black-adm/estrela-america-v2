@@ -39,7 +39,7 @@ const products = [
 
 export function ListProducts() {
   return (
-   <div className="mt-16 bg-gradient-to-br from-[#132c59] to-slate-950">
+      <div className="mt-16 bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary-orange">
           Mais bem avaliados
@@ -57,15 +57,15 @@ export function ListProducts() {
               </div>
               <div className="mt-4 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-white">
+                  <h3 className="text-sm text-slate-900">
                     <a href={product.href}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm text-orange-400">{product.color}</p>
+                  <p className="mt-1 text-sm text-primary-blue">{product.color}</p>
                 </div>
-                <p className="text-sm font-medium sm:text-lg text-white">{product.price}</p>
+                <p className="text-sm font-medium sm:text-lg text-black">{product.price}</p>
               </div>
             </div>
           ))}
