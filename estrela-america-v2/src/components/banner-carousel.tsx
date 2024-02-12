@@ -56,8 +56,14 @@ export function BannerCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious onClick={handlePrevious} />
-          <CarouselNext onClick={handleNext} />
+          <CarouselPrevious 
+            onClick={handlePrevious} 
+            className="bg-black text-white" 
+          />
+          <CarouselNext 
+            onClick={handleNext}
+            className="bg-black text-white"
+          />
         </Carousel>
       </div>
     </>
