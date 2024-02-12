@@ -32,7 +32,7 @@ export function BannerCarousel() {
 
   return (
     <>
-      <div className="py-6 bg-gray-50 flex justify-center items-center">
+      <div className="bg-slate-900 flex justify-center items-center">
         <Carousel
           plugins={[plugin.current]}
           className="max-w-6xl"
@@ -45,7 +45,6 @@ export function BannerCarousel() {
                 <div className="w-auto h-[520px]">
                   <div className="flex aspect-auto items-center justify-center">
                     <Image
-                      className="rounded-xl"
                       src={url}
                       width={1900}
                       height={890}

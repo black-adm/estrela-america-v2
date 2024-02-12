@@ -39,8 +39,8 @@ const products = [
 
 export function ListProducts() {
   return (
-      <div className="mt-16 bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="my-16">
+      <div className="bg-white mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-12 rounded-xl">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary-orange">
           Mais bem avaliados
         </h2>

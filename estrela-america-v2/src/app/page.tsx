@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <Header />
-      <div className="bg-white">
+      <div className="bg-silver">
         <BannerCarousel />
+        <ListProducts />
+        <ListCollections />
       </div>
-      <ListProducts />
-      <ListCollections />
       <Footer />
     </div>
   )
