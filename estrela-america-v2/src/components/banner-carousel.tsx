@@ -1,19 +1,17 @@
 'use client'
 
-import { useState, useRef } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
+import { useState, useRef } from 'react'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel'
 
 export function BannerCarousel() {
-  const [urls, setUrls] = useState([
+  const [urls] = useState([
     '/banner-pronta-entrega.png',
     '/banner-novidades.png',
     '/banner-promo.png',
@@ -21,30 +19,23 @@ export function BannerCarousel() {
   ])
 
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
-  const handleNext = () =>
-    setUrls((prevUrls) => [...prevUrls.slice(1), prevUrls[0]])
-
-  const handlePrevious = () =>
-    setUrls((prevUrls) => [
-      prevUrls[prevUrls.length - 1],
-      ...prevUrls.slice(0, -1),
-    ])
 
   return (
     <>
-      <div className="bg-slate-900 flex justify-center items-center">
+      <div className="bg-white pb-12 flex justify-center">
         <Carousel
           plugins={[plugin.current]}
-          className="max-w-6xl"
+          className="max-w-7xl"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {urls.map((url, index) => (
               <CarouselItem key={index}>
-                <div className="w-auto h-[520px]">
+                <div className="h-auto w-full mx-auto">
                   <div className="flex aspect-auto items-center justify-center">
                     <Image
+                      className="rounded-xl"
                       src={url}
                       width={1900}
                       height={890}
@@ -55,14 +46,6 @@ export function BannerCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious 
-            onClick={handlePrevious} 
-            className="bg-black text-white" 
-          />
-          <CarouselNext 
-            onClick={handleNext}
-            className="bg-black text-white"
-          />
         </Carousel>
       </div>
     </>

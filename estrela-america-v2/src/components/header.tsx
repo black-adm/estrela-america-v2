@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { SocialBanner } from './social-banner'
 import Link from 'next/link'
+
+import { SocialBanner } from './social-banner'
 import { Heart, ShoppingBag } from 'lucide-react'
 import { SearchInput } from './search-input'
 import { Menu } from './menu'
