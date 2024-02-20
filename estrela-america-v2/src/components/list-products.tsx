@@ -89,8 +89,8 @@ export function ListProducts() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="previous text-primary-blue bg-white w-16 h-16" />
-        <CarouselNext className="next text-primary-blue bg-white w-16 h-16" />
+        <CarouselPrevious className="previous text-primary-orange bg-slate-900 w-16 h-16 hover:bg-white hover:text-primary-blue" />
+        <CarouselNext className="next text-primary-orange bg-slate-900 w-16 h-16 hover:bg-white hover:text-primary-blue" />
       </Carousel>
     </div>
   )

@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { ListCollections } from '@/components/list-collections'
 import { ListProducts } from '@/components/list-products'
+import { Slider } from '@/components/slider'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="bg-gray-100">
         <BannerCarousel />
         <ListProducts />
+        <Slider />
         <ListCollections />
       </div>
       <Footer />

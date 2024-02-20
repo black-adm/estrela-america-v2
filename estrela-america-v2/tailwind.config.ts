@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         'primary-orange': '#FF6900',
+        'primary-green': '#2C8E1C',
         'primary-red': '#C00',
         'primary-blue': '#0693E3',
         'medium-blue': '#1F2859',
