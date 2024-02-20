@@ -15,7 +15,8 @@ const callouts = [
   },
   {
     name: 'Produtos personalizados',
-    description: 'Use sua criatividade e encomende produtos personalizados de qualidade.',
+    description:
+      'Use sua criatividade e encomende produtos personalizados de qualidade.',
     imageSrc: '/camisas.jpg',
     imageAlt: 'Produtos personalizados',
     href: '#',
@@ -24,10 +25,10 @@ const callouts = [
 
 export function ListCollections() {
   return (
-      <div className="pb-12 md:pb-20">
+    <div className="pb-12 md:pb-20">
       <div className="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-xl">
-        <div className="mx-auto max-w-2xl py-10 sm:py-12 lg:max-w-none lg:py-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-primary-orange">
+        <div className="mx-auto max-w-2xl py-10 sm:py-12 lg:max-w-none">
+          <h2 className="text-2xl font-bold text-primary-orange">
             Conheça nossas coleções
           </h2>
 
@@ -47,7 +48,9 @@ export function ListCollections() {
                     {callout.name}
                   </a>
                 </h3>
-                <p className="text-base font-semibold text-primary-blue">{callout.description}</p>
+                <p className="text-base font-semibold text-primary-blue">
+                  {callout.description}
+                </p>
               </div>
             ))}
           </div>

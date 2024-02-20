@@ -50,7 +50,7 @@ export function Menu() {
                     Beleza
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -69,7 +69,7 @@ export function Menu() {
                     Brindes
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -88,7 +88,7 @@ export function Menu() {
                     Casa e cozinha
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -107,7 +107,7 @@ export function Menu() {
                     Papelaria
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -126,7 +126,7 @@ export function Menu() {
                     Relógios
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -145,7 +145,7 @@ export function Menu() {
                     Tecnologia
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex justify-center">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem
@@ -164,7 +164,7 @@ export function Menu() {
                     Utilidades
                   </div>
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="flex">
                   <ul className="flex flex-col w-60 gap-3 p-4">
                     {components.map((component) => (
                       <ListItem

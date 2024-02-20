@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+.previous > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.next > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
