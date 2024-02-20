@@ -39,12 +39,12 @@ const components: { title: string; href: string }[] = [
 export function Menu() {
   return (
     <>
-      <div className="p-8 max-w-full h-auto">
-        <div className="mx-auto max-w-6xl flex justify-center items-center py-4 bg-primary-orange rounded-lg">
+      <div className="py-3 max-w-full h-auto">
+        <div className="mx-auto max-w-6xl flex justify-center items-center">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <Vegan className="h-5 w-5" />
                     Beleza
@@ -63,7 +63,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <Gift className="h-5 w-5" />
                     Brindes
@@ -82,7 +82,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <UtensilsCrossed className="h-5 w-5" />
                     Casa e cozinha
@@ -101,7 +101,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <NotebookPen className="h-5 w-5" />
                     Papelaria
@@ -120,7 +120,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <Timer className="h-5 w-5" />
                     Relógios
@@ -139,7 +139,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <Cpu className="h-5 w-5" />
                     Tecnologia
@@ -158,7 +158,7 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-orange-300 focus:bg-orange-300">
+                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
                     <Box className="h-5 w-5" />
                     Utilidades

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <Header />
-      <div className="bg-silver">
+      <div className="bg-gray-100">
         <BannerCarousel />
         <ListProducts />
         <ListCollections />

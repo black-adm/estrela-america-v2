@@ -4,7 +4,7 @@ const products = [
     name: 'Garrafas térmicas',
     href: '#',
     imageSrc: '/garrafas.png',
-    imageAlt: "Garrafas",
+    imageAlt: 'Garrafas',
     price: 'R$ 35,00',
     color: 'Preto, Branco, Prata',
   },
@@ -13,7 +13,7 @@ const products = [
     name: 'Canetas coloridas',
     href: '#',
     imageSrc: '/canetas.png',
-    imageAlt: "Canetas",
+    imageAlt: 'Canetas',
     price: 'R$ 8,99',
     color: 'Azul, Vermelho, Verde',
   },
@@ -22,7 +22,7 @@ const products = [
     name: 'Tenis casual',
     href: '#',
     imageSrc: 'tenis.png',
-    imageAlt: "Tenis",
+    imageAlt: 'Tenis',
     price: 'R$ 136,72',
     color: 'Azul Claro',
   },
@@ -31,7 +31,7 @@ const products = [
     name: 'Potes variados',
     href: '#',
     imageSrc: '/potes.png',
-    imageAlt: "Potes",
+    imageAlt: 'Potes',
     price: 'R$ 44,63',
     color: 'Amarelo, Roxo, Laranja',
   },
@@ -39,7 +39,7 @@ const products = [
 
 export function ListProducts() {
   return (
-      <div className="my-16">
+    <div className="my-16">
       <div className="bg-white mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-12 rounded-xl">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-primary-orange">
           Mais bem avaliados
@@ -52,7 +52,7 @@ export function ListProducts() {
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="h-full w-full object-contain object-center lg:h-full lg:w-full"
+                  className="h-48 w-48 object-contain object-center lg:h-full lg:w-full"
                 />
               </div>
               <div className="mt-4 flex justify-between">
@@ -63,9 +63,13 @@ export function ListProducts() {
                       {product.name}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm text-primary-blue">{product.color}</p>
+                  <p className="mt-1 text-sm text-primary-blue">
+                    {product.color}
+                  </p>
                 </div>
-                <p className="text-sm font-medium sm:text-lg text-black">{product.price}</p>
+                <p className="text-sm font-medium sm:text-lg text-black">
+                  {product.price}
+                </p>
               </div>
             </div>
           ))}

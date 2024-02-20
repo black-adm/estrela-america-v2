@@ -22,20 +22,20 @@ export function BannerCarousel() {
 
   return (
     <>
-      <div className="bg-white pb-12 flex justify-center">
+      <div className="bg-gray-50 sm:p-12 flex justify-center">
         <Carousel
           plugins={[plugin.current]}
-          className="max-w-7xl"
+          className="w-full sm:max-w-7xl"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {urls.map((url, index) => (
               <CarouselItem key={index}>
-                <div className="h-auto w-full mx-auto">
+                <div className=" w-screen h-full mx-auto sm:w-full sm:h-auto">
                   <div className="flex aspect-auto items-center justify-center">
                     <Image
-                      className="rounded-xl"
+                      className="sm:rounded-xl"
                       src={url}
                       width={1900}
                       height={890}
