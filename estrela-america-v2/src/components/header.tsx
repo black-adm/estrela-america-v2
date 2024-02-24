@@ -10,8 +10,8 @@ export function Header() {
   return (
     <>
       <SocialBanner />
-      <header className="bg-medium-blue w-full h-auto pt-2">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6">
+      <header className="bg-medium-blue w-full h-auto pt-1">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between p-5">
           <div className="w-full flex">
             <Link href="/" className="-m-1.5 p-1.5">
               <Image
@@ -31,28 +31,26 @@ export function Header() {
           <div className="hidden md:flex md:flex-1 md:items-center md:justify-end">
             <div className="flex gap-6 px-8 lg:px-0 lg:pr-12">
               <Link href="/favoritos" title="favoritos">
-                <Heart className="text-white fill-primary-red hover:fill-red-400" />
+                <Heart className="text-white hover:fill-primary-red" />
               </Link>
 
               <Link href="/carrinho" title="carrinho">
-                <ShoppingBag className="text-white fill-slate-950 hover:fill-orange-400" />
+                <ShoppingBag className="text-white hover:fill-orange-400" />
               </Link>
             </div>
 
             <div className="flex items-center">
-              <MapPin
-                size={34}
-                className="text-white fill-slate-950"
-                strokeWidth={1}
-              />
+              <div className="p-1.5 rounded-full border-2">
+                <MapPin size={20} className="text-white" strokeWidth={2} />
+              </div>
 
-              <div className="flex flex-col items-center w-[100px]">
-                <p className="text-xs leading-6 uppercase text-white">
+              <div className="pl-2.5 pb-1.5 flex items-center w-24">
+                <span className="flex flex-col text-[10px] leading-6 uppercase text-white">
                   Enviar para
-                </p>
-                <button className="text-sm font-light underline text-cyan-300 hover:text-sky-400">
-                  <strong>Novo endereço</strong>
-                </button>
+                  <button className="p-0 text-xs font-extrabold underline text-[#ffbc42] hover:text-orange-400">
+                    novo endereço
+                  </button>
+                </span>
               </div>
             </div>
           </div>

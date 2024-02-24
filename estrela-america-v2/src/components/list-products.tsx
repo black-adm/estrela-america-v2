@@ -56,7 +56,7 @@ export function ListProducts() {
         </h2>
 
         <CarouselContent className="-ml-1">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <CarouselItem
               key={product.id}
               className="pl-1 md:basis-1/2 lg:basis-1/3"
@@ -89,8 +89,8 @@ export function ListProducts() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="previous text-primary-orange bg-slate-900 w-16 h-16 hover:bg-white hover:text-primary-blue" />
-        <CarouselNext className="next text-primary-orange bg-slate-900 w-16 h-16 hover:bg-white hover:text-primary-blue" />
+        <CarouselPrevious className="previous lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-white text-primary-blue" />
+        <CarouselNext className="next lg:w-12 lg:h:12  xl:w-16 xl:h-16 bg-white text-primary-blue" />
       </Carousel>
     </div>
   )

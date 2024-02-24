@@ -22,7 +22,7 @@ export function BannerCarousel() {
 
   return (
     <>
-      <div className="bg-gray-100 sm:p-12 flex justify-center">
+      <div className="bg-gray-100 w-screen sm:p-12 flex justify-center">
         <Carousel
           plugins={[plugin.current]}
           className="w-full sm:max-w-7xl"

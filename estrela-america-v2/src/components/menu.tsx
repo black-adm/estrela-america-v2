@@ -39,14 +39,14 @@ const components: { title: string; href: string }[] = [
 export function Menu() {
   return (
     <>
-      <div className="py-3 max-w-full h-auto">
+      <div className="pb-2 max-w-full h-auto">
         <div className="mx-auto max-w-6xl flex justify-center items-center">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <Vegan className="h-5 w-5" />
+                    <Vegan className="size-4" />
                     Beleza
                   </div>
                 </NavigationMenuTrigger>
@@ -63,9 +63,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <Gift className="h-5 w-5" />
+                    <Gift className="size-4" />
                     Brindes
                   </div>
                 </NavigationMenuTrigger>
@@ -82,9 +82,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <UtensilsCrossed className="h-5 w-5" />
+                    <UtensilsCrossed className="size-4" />
                     Casa e cozinha
                   </div>
                 </NavigationMenuTrigger>
@@ -101,9 +101,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <NotebookPen className="h-5 w-5" />
+                    <NotebookPen className="size-4" />
                     Papelaria
                   </div>
                 </NavigationMenuTrigger>
@@ -120,9 +120,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <Timer className="h-5 w-5" />
+                    <Timer className="size-4" />
                     Relógios
                   </div>
                 </NavigationMenuTrigger>
@@ -139,9 +139,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <Cpu className="h-5 w-5" />
+                    <Cpu className="size-4" />
                     Tecnologia
                   </div>
                 </NavigationMenuTrigger>
@@ -158,9 +158,9 @@ export function Menu() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-white hover:bg-sky-200 focus:bg-sky-200">
+                <NavigationMenuTrigger className="bg-transparent text-white text-xs hover:bg-sky-200 focus:bg-sky-200">
                   <div className="flex items-center gap-1.5">
-                    <Box className="h-5 w-5" />
+                    <Box className="size-4" />
                     Utilidades
                   </div>
                 </NavigationMenuTrigger>
