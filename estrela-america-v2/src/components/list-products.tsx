@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import Image from 'next/image'
 
 const products = [
   {
@@ -31,7 +32,7 @@ const products = [
     id: 3,
     name: 'Tenis casual',
     href: '#',
-    imageSrc: 'tenis.png',
+    imageSrc: '/tenis.png',
     imageAlt: 'Tenis',
     price: 'R$ 136,72',
     color: 'Azul Claro',
@@ -50,7 +51,7 @@ const products = [
 export function ListProducts() {
   return (
     <div className="my-16">
-      <Carousel className="bg-white mx-auto max-w-2xl px-4 py-10 sm:px-6 lg:max-w-7xl lg:px-12 rounded-xl">
+      <Carousel className="bg-white mx-auto py-10 max-w-2xl px-4 sm:px-6 lg:max-w-6xl lg:px-8 rounded-xl">
         <h2 className="text-2xl pb-8 font-bold tracking-tight text-primary-orange">
           Mais bem avaliados
         </h2>
@@ -62,11 +63,13 @@ export function ListProducts() {
               className="pl-1 md:basis-1/2 lg:basis-1/3"
             >
               <div className="p-1">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-white lg:aspect-none group-hover:opacity-75 lg:h-80">
-                  <img
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-white lg:aspect-none group-hover:opacity-75 lg:h-72 xl:h-80">
+                  <Image
                     src={product.imageSrc}
                     alt={product.imageAlt}
-                    className="h-48 w-48 object-contain object-center lg:h-full lg:w-full"
+                    width={600}
+                    height={600}
+                    className="lh-44 lw-44 object-contain object-center xl:h-full xl:w-full"
                   />
                 </div>
                 <div className="mt-4 flex justify-between">

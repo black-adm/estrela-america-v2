@@ -3,12 +3,12 @@
 import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
-import { useState, useRef } from 'react'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel'
+import { useRef, useState } from 'react'
 
 export function BannerCarousel() {
   const [urls] = useState([
@@ -22,32 +22,24 @@ export function BannerCarousel() {
 
   return (
     <>
-      <div className="bg-gray-100 w-screen sm:p-12 flex justify-center">
-        <Carousel
-          plugins={[plugin.current]}
-          className="w-full sm:max-w-7xl"
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
-        >
-          <CarouselContent>
-            {urls.map((url, index) => (
-              <CarouselItem key={index}>
-                <div className=" w-screen h-full mx-auto sm:w-full sm:h-auto">
-                  <div className="flex aspect-auto items-center justify-center">
-                    <Image
-                      className="sm:rounded-xl"
-                      src={url}
-                      width={1900}
-                      height={890}
-                      alt="Banner"
-                    />
-                  </div>
+      <Carousel
+        plugins={[plugin.current]}
+        className="flex justify-center w-full sm:max-w-screen"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent>
+          {urls.map((url, index) => (
+            <CarouselItem key={index}>
+              <div className=" w-screen h-full mx-auto sm:w-full sm:h-auto">
+                <div className="flex aspect-auto items-center justify-center">
+                  <Image src={url} width={1900} height={890} alt="Banner" />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </>
   )
 }

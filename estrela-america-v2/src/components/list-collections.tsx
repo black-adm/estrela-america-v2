@@ -26,7 +26,7 @@ const callouts = [
 export function ListCollections() {
   return (
     <div className="pb-12 md:pb-20">
-      <div className="bg-white mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-xl">
+      <div className="bg-white mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 rounded-xl">
         <div className="mx-auto max-w-2xl py-10 sm:py-12 lg:max-w-none">
           <h2 className="text-2xl font-bold text-primary-orange">
             Conheça nossas coleções

@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MousePointerClick, Phone } from 'lucide-react'
-import { Whatsapp } from './logo-whatsapp'
 import Link from 'next/link'
+import { Whatsapp } from './logo-whatsapp'
 
 export function SocialBanner() {
   return (
@@ -25,7 +25,7 @@ export function SocialBanner() {
         <div className="flex space-x-8 items-center">
           <Link
             href="#"
-            className="hover:translate-x-1.5 transition-transform ease-in duration-200"
+            className="hover:translate-x-1 transition-transform ease-in duration-200"
             title="whatsapp"
           >
             <Whatsapp />
@@ -33,18 +33,18 @@ export function SocialBanner() {
 
           <Link
             href="#"
-            className="hover:translate-x-1.5 transition-transform ease-in duration-200"
+            className="hover:translate-x-1 transition-transform ease-in duration-200"
             title="instagram"
           >
-            <Instagram className="size-4 text-black hover:p-1 hover:rounded-full hover:bg-orange-100 hover:text-[#fe7f2d]" />
+            <Instagram className="size-4 text-black hover:p-1 hover:rounded-full hover:size-5 hover:bg-orange-100 hover:text-[#fe7f2d]" />
           </Link>
 
           <Link
             href="#"
-            className="hover:translate-x-1.5 transition-transform ease-in duration-200"
+            className="hover:translate-x-1 transition-transform ease-in duration-200"
             title="facebook"
           >
-            <Facebook className="size-4 text-black hover:p-1 hover:rounded-full hover:bg-orange-100 hover:text-[#fe7f2d]" />
+            <Facebook className="size-4 text-black hover:p-1 hover:rounded-full hover:size-5 hover:bg-orange-100 hover:text-[#fe7f2d]" />
           </Link>
         </div>
       </div>
