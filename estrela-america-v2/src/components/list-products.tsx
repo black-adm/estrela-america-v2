@@ -52,11 +52,11 @@ export function ListProducts() {
   return (
     <div className="my-16">
       <Carousel className="bg-white mx-auto py-10 max-w-2xl px-4 sm:px-6 lg:max-w-6xl lg:px-8 rounded-xl">
-        <h2 className="text-2xl pb-8 font-bold tracking-tight text-primary-orange">
+        <h2 className="text-2xl pb-4 lg:pb-8 font-bold tracking-tight text-primary-orange">
           Mais bem avaliados
         </h2>
 
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ml-1 grid grid-cols-2 md:flex md:px-6 gap-4">
           {products.map((product) => (
             <CarouselItem
               key={product.id}
@@ -69,9 +69,10 @@ export function ListProducts() {
                     alt={product.imageAlt}
                     width={600}
                     height={600}
-                    className="lh-44 lw-44 object-contain object-center xl:h-full xl:w-full"
+                    className="h-28 w-28 object-contain object-center sm:w-52 sm:h-52 xl:h-full xl:w-full"
                   />
                 </div>
+
                 <div className="mt-4 flex justify-between">
                   <div>
                     <h3 className="text-sm text-slate-900">
@@ -92,8 +93,8 @@ export function ListProducts() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="previous lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-white text-primary-blue" />
-        <CarouselNext className="next lg:w-12 lg:h:12  xl:w-16 xl:h-16 bg-white text-primary-blue" />
+        <CarouselPrevious className="hidden previous sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 xl:w-16 xl:h-16 bg-white text-primary-blue" />
+        <CarouselNext className="hidden next sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 xl:w-16 xl:h-16 bg-white text-primary-blue" />
       </Carousel>
     </div>
   )

@@ -23,7 +23,7 @@ export function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-gray-100 hover:translate-y-3 transition delay-150 duration-300"
+                className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-silver"
               >
                 <Instagram />
               </a>
@@ -31,7 +31,7 @@ export function Footer() {
               <a
                 href="#"
                 target="_blank"
-                className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-gray-100 hover:translate-y-3 transition delay-150 duration-300"
+                className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-silver"
               >
                 <Facebook />
               </a>

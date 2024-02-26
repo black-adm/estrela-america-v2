@@ -76,11 +76,23 @@
 }
 
 .previous > svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 .next > svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .previous > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .next > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }

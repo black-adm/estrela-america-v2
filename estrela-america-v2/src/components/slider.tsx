@@ -27,10 +27,10 @@ export function Slider() {
 
   return (
     <div
-      className={`container bg-white max-w-6xl rounded-xl flex flex-col px-6 py-4 mx-auto space-y-6 md:mb-16 md:h-128 md:py-10 md:flex-row md:items-center md:space-x-6 bg-${currentColor}`}
+      className={`container bg-white w-full md:max-w-6xl sm:rounded-xl flex flex-col px-6 py-4 mx-auto space-y-6 md:mb-16 md:h-128 md:py-10 md:flex-row md:items-center md:space-x-6 bg-${currentColor}`}
     >
       <div className="flex flex-col items-center w-full md:flex-row md:w-1/2">
-        <div className="flex justify-center order-2 mt-6 md:mt-0 md:space-y-3 md:flex-col">
+        <div className="flex justify-center order-2 pt-8 md:pt-0 md:space-y-3 md:flex-col">
           {images.map((image, index) => (
             <button
               key={index}
@@ -42,17 +42,17 @@ export function Slider() {
           ))}
         </div>
 
-        <div className="max-w-lg md:mx-12 md:order-2">
-          <h1 className="text-3xl font-medium tracking-wide text-primary-orange md:text-4xl">
+        <div className="pt-5 max-w-lg md:mx-12 md:order-2">
+          <h1 className="text-2xl text-center sm:text-left md:text-4xl font-medium tracking-wide text-primary-orange">
             Personalize do seu jeito
           </h1>
-          <p className="mt-4 text-gray-600 pr-4">
+          <p className="mt-4 text-gray-600 text-sm sm:text-lg pr-0 sm:pr-4">
             Traga sua personalidade para nossos produtos com o melhor prazo de
             entrega do mercado.
           </p>
 
-          <div className="mt-6">
-            <button className="flex items-center gap-2 py-2.5 px-8 rounded-lg bg-green-400 text-black hover:opacity-80">
+          <div className="pt-6 flex justify-center sm:justify-start">
+            <button className="flex items-center gap-2 py-2.5 px-6 sm:px-8 text-sm sm:text-base rounded-lg bg-green-400 text-black hover:opacity-80">
               <span>
                 <Whatsapp />
               </span>
@@ -62,11 +62,11 @@ export function Slider() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full h-96 md:w-1/2">
+      <div className="pt-3 flex items-center justify-center w-full h-80 sm:pt-0 sm:h-96 md:w-1/2">
         <Image
           width={500}
           height={449}
-          className="object-contain bg-primary-silver w-full h-full max-w-2xl rounded-lg"
+          className="object-contain bg-primary-silver w-full h-full max-w-xl sm:max-w-2xl rounded-lg"
           src={images[currentImage]}
           alt={`garrafas-termicas-personalizadas-${currentImage}`}
         />
