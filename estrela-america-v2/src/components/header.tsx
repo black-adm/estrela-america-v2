@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SocialBanner } from './social-banner'
-import { Heart, ShoppingBag, MapPin } from 'lucide-react'
-import { SearchInput } from './search-input'
+import { Heart, MapPin, ShoppingBag } from 'lucide-react'
 import { Menu } from './menu'
+import { SearchInput } from './search-input'
+import { SocialBanner } from './social-banner'
 
 export function Header() {
   return (
@@ -15,7 +15,7 @@ export function Header() {
           <div className="w-full flex">
             <Link href="/" className="-m-1.5 p-1.5">
               <Image
-                className="h-6 w-auto"
+                className="h-5 w-full lg:h-6 lg:w-auto"
                 src="/logo-white.png"
                 height={1330}
                 width={10605}
@@ -24,30 +24,33 @@ export function Header() {
             </Link>
           </div>
 
-          <div className="hidden md:pr-12 md:flex md:items-center lg:pr-32">
+          <div className="hidden sm:pr-8 sm:flex sm:items-center lg:pr-32">
             <SearchInput />
           </div>
 
-          <div className="hidden md:flex md:flex-1 md:items-center md:justify-end">
-            <div className="flex gap-6 px-8 lg:px-0 lg:pr-12">
+          <div className="flex flex-1 items-center justify-end">
+            <div className="flex gap-6 px-4 sm:pr-5 lg:px-0 lg:pr-12">
               <Link href="/favoritos" title="favoritos">
-                <Heart className="text-white hover:fill-primary-red" />
+                <Heart className="text-white size-5 lg:size-6 hover:fill-primary-red" />
               </Link>
 
               <Link href="/carrinho" title="carrinho">
-                <ShoppingBag className="text-white hover:fill-orange-400" />
+                <ShoppingBag className="text-white size-5 lg:size-6 hover:fill-orange-400" />
               </Link>
             </div>
 
-            <div className="flex items-center">
-              <div className="p-1.5 rounded-full border-2">
-                <MapPin size={20} className="text-white" strokeWidth={2} />
+            <div className="hidden md:flex md:items-center">
+              <div className="p-1 lg:p-1.5 rounded-full border-2">
+                <MapPin
+                  className="text-white size-4 lg:size-5"
+                  strokeWidth={2}
+                />
               </div>
 
               <div className="pl-2.5 pb-1.5 flex items-center w-24">
                 <span className="flex flex-col text-[10px] leading-6 uppercase text-white">
                   Enviar para
-                  <button className="p-0 text-xs font-extrabold underline text-[#ffbc42] hover:text-orange-400">
+                  <button className="p-0 text-[10px] lg:text-xs font-extrabold underline text-[#ffbc42] hover:text-orange-400">
                     novo endereço
                   </button>
                 </span>

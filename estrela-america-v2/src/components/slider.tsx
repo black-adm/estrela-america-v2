@@ -27,10 +27,10 @@ export function Slider() {
 
   return (
     <div
-      className={`container bg-white w-full md:max-w-6xl sm:rounded-xl flex flex-col px-6 py-4 mx-auto space-y-6 md:mb-16 md:h-128 md:py-10 md:flex-row md:items-center md:space-x-6 bg-${currentColor}`}
+      className={`container bg-white w-full md:max-w-6xl sm:rounded-xl flex flex-col px-6 py-4 mx-auto space-y-6 sm:mb-16 md:h-128 sm:py-10 md:flex-row md:items-center md:space-x-6 bg-${currentColor}`}
     >
       <div className="flex flex-col items-center w-full md:flex-row md:w-1/2">
-        <div className="flex justify-center order-2 pt-8 md:pt-0 md:space-y-3 md:flex-col">
+        <div className="flex justify-center order-2 pt-12 md:pt-0 md:space-y-3 md:flex-col">
           {images.map((image, index) => (
             <button
               key={index}
@@ -62,7 +62,7 @@ export function Slider() {
         </div>
       </div>
 
-      <div className="pt-3 flex items-center justify-center w-full h-80 sm:pt-0 sm:h-96 md:w-1/2">
+      <div className="pt-5 flex items-center justify-center w-full h-80 sm:pt-0 sm:h-96 md:w-1/2">
         <Image
           width={500}
           height={449}
