@@ -24,7 +24,7 @@ export function Menu() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <Vegan className="size-4" />
                     Beleza
@@ -32,7 +32,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <Gift className="size-4" />
                     Brindes
@@ -40,7 +40,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <UtensilsCrossed className="size-4" />
                     Casa e cozinha
@@ -48,7 +48,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <NotebookPen className="size-4" />
                     Papelaria
@@ -56,7 +56,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <Timer className="size-4" />
                     Relógios
@@ -64,7 +64,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <Cpu className="size-4" />
                     Tecnologia
@@ -72,7 +72,7 @@ export function Menu() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-200 hover:text-black focus:bg-orange-200 focus:text-black">
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
                   <div className="flex items-center gap-1.5">
                     <Box className="size-4" />
                     Utilidades
