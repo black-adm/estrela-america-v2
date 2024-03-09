@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MousePointerClick, Phone } from 'lucide-react'
 import Link from 'next/link'
-import { Whatsapp } from './logo-whatsapp'
+import { Whatsapp } from '../logo-whatsapp'
 
 export function SocialBanner() {
   return (

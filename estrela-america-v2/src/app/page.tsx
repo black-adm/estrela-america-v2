@@ -1,9 +1,9 @@
-import { BannerCarousel } from '@/components/banner-carousel'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { ListCollections } from '@/components/list-collections'
-import { ListProducts } from '@/components/list-products'
-import { Slider } from '@/components/slider'
+import { BannerCarousel } from '@/components/marketing/banner-carousel'
+import { Slider } from '@/components/marketing/slider'
+import { ListCollections } from '@/components/products/list-collections'
+import { ListProducts } from '@/components/products/list-products'
 
 export default function Home() {
   return (

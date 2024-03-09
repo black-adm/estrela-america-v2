@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { Whatsapp } from './logo-whatsapp'
+import { Whatsapp } from '../logo-whatsapp'
 
 interface SliderProps {
   color: string
