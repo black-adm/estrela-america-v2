@@ -23,6 +23,7 @@ const config = {
         'primary-green': '#2C8E1C',
         'primary-red': '#C00',
         'primary-blue': '#0693E3',
+        'primary-yellow': '#FFDF00',
         'medium-blue': '#1F2859',
         'light-blue': '#69CCFB',
         'primary-silver': '#EBEBEB',

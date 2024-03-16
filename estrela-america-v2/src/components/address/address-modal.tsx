@@ -60,12 +60,12 @@ export function AddressModal() {
             {isLoading && <AddressSkeleton />}
 
             {address && (
-              <div className="pt-1 space-y-2 text-sm">
-                <p>Enderço: {address.logradouro}</p>
-                <p>Bairro: {address.bairro}</p>
-                <p>Cidade: {address.localidade}</p>
-                <p>UF: {address.uf}</p>
-              </div>
+              <table className="pt-1 space-y-2 text-sm">
+                <th>Enderço: {address.logradouro}</th>
+                <th>Bairro: {address.bairro}</th>
+                <th>Cidade: {address.localidade}</th>
+                <th>UF: {address.uf}</th>
+              </table>
             )}
           </div>
         </div>

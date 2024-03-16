@@ -21,7 +21,7 @@ export function Footer() {
             </p>
             <div className="mt-4 flex items-center justify-center space-x-8">
               <a
-                href="#"
+                href="https://www.instagram.com/estrelaamerica25/"
                 target="_blank"
                 className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-silver"
               >
@@ -29,7 +29,7 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/estrelaamericadosul"
                 target="_blank"
                 className="flex items-center hover:p-1.5 hover:rounded-full hover:bg-silver"
               >

@@ -7,6 +7,8 @@ import {
 } from '@/components/ui/navigation-menu'
 import {
   Box,
+  BriefcaseIcon,
+  Coffee,
   Cpu,
   Gift,
   NotebookPen,
@@ -36,6 +38,22 @@ export function Menu() {
                   <div className="flex items-center gap-1.5">
                     <Gift className="size-4" />
                     Brindes
+                  </div>
+                </Button>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                  <div className="flex items-center gap-1.5">
+                    <BriefcaseIcon className="size-4" />
+                    Bolsas e mochilas
+                  </div>
+                </Button>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                  <div className="flex items-center gap-1.5">
+                    <Coffee className="size-4" />
+                    Canecas e garrafas
                   </div>
                 </Button>
               </NavigationMenuItem>
