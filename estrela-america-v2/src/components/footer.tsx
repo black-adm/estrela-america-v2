@@ -5,9 +5,9 @@ export function Footer() {
   return (
     <>
       <footer className="bg-white mt-5">
-        <div className="container px-6 py-8 mx-auto">
+        <div className="container p-5 mx-auto">
           <div className="flex flex-col items-center text-center">
-            <a href="#">
+            <a href="/">
               <Image
                 className="w-auto h-6 sm:h-7"
                 src="/logo.png"
