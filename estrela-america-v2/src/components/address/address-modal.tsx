@@ -1,6 +1,7 @@
 'use client'
 
-import { Address, getAddress } from '@/data/get-address'
+import { getAddress } from '@/data/get-address'
+import { Address } from '@/types/address'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
@@ -87,7 +88,7 @@ export function AddressModal() {
                       <strong className="text-sm">Número</strong>
                       <Input
                         type="text"
-                        className="ml-5 w-16 text-black text-sm"
+                        className="ml-2 sm:ml-5 w-16 text-black text-sm"
                       />
                       <Input
                         type="text"
@@ -108,7 +109,7 @@ export function AddressModal() {
                       <strong className="text-sm">Cidade</strong>
                       <Input
                         type="text"
-                        className="bg-primary-silver w-40 text-black text-sm"
+                        className="bg-primary-silver w-44 sm:w-40 text-black text-sm"
                         value={address.localidade}
                         disabled
                       />

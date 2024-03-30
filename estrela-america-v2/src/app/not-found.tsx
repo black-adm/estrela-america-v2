@@ -15,7 +15,7 @@ export default function NotFound() {
       <div className="py-5 flex flex-col justify-center items-center">
         <Image
           src="/404.png"
-          className="w-3/4"
+          className="w-2/5"
           width={450}
           height={450}
           alt="404 not found"
@@ -31,9 +31,9 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="bg-primary-blue text-sm text-white py-2 px-5 rounded-md hover:bg-sky-300"
+        className="mt-3 bg-primary-blue text-sm text-white py-2 px-5 rounded-md hover:bg-sky-300"
       >
-        Página inicial
+        Voltar para o inicio
       </Link>
     </div>
   )

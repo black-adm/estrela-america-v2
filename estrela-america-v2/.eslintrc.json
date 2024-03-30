@@ -8,6 +8,7 @@
     "dist/",  
     "next/",
     "src/components/ui/*.tsx",
-    "src/lib/*.ts"
+    "src/lib/*.ts",
+    "src/api/**"
   ]
 }

@@ -6,14 +6,12 @@ const callouts = [
     description: 'Produtos com estampas a pronta entrega e sobre encomenda.',
     imageSrc: '/camisetas.jpg',
     imageAlt: 'Produtos personalizados',
-    href: '#',
   },
   {
     name: 'Regatas variadas',
     description: 'Mais variados preços e tecidos para a estação verão.',
     imageSrc: '/regatas.jpg',
     imageAlt: 'Produtos personalizados',
-    href: '#',
   },
   {
     name: 'Produtos personalizados',
@@ -21,7 +19,6 @@ const callouts = [
       'Use sua criatividade e encomende produtos personalizados de qualidade.',
     imageSrc: '/camisas.jpg',
     imageAlt: 'Produtos personalizados',
-    href: '#',
   },
 ]
 
@@ -47,7 +44,7 @@ export function ListCollections() {
                   />
                 </div>
                 <h3 className="mt-6 text-sm sm:text-lg text-black">
-                  <a href={callout.href}>
+                  <a href="#">
                     <span className="absolute inset-0" />
                     {callout.name}
                   </a>

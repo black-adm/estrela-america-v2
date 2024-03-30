@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <Header />
-      <div className="bg-gray-100">
+      <div>
         <BannerCarousel />
         <ListProducts />
         <Slider />
