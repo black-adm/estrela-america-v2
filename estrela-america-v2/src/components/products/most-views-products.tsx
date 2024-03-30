@@ -1,13 +1,5 @@
 'use client'
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
-
 import { ProductCard } from './product-card'
 import { ProductContainerTitle } from './product-container-title'
 
@@ -40,29 +32,54 @@ const products = [
     imageAlt: 'Potes',
     price: '44,63',
   },
+  {
+    id: 5,
+    name: 'Garrafas térmicas',
+    imageSrc: '/garrafas.png',
+    imageAlt: 'Garrafas',
+    price: '35,00',
+  },
+  {
+    id: 6,
+    name: 'Canetas coloridas',
+    imageSrc: '/canetas.png',
+    imageAlt: 'Canetas',
+    price: '8,99',
+  },
+  {
+    id: 7,
+    name: 'Tênis casual',
+    imageSrc: '/tenis.png',
+    imageAlt: 'Tênis',
+    price: '136,72',
+  },
+  {
+    id: 8,
+    name: 'Potes variados',
+    imageSrc: '/potes.png',
+    imageAlt: 'Potes',
+    price: '44,63',
+  },
 ]
 
-export function ListProducts() {
+export function MostViewsProducts() {
   return (
-    <div className="py-10">
+    <div className="py-8">
       <ProductContainerTitle
-        title="Produtos com melhores"
-        titleStrong="avaliações"
+        title="Produtos mais"
+        titleStrong="visualizados"
         navigate="#"
       />
 
-      <Carousel className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-6xl">
-        <CarouselContent className="grid grid-cols-4">
+      <main className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-6xl">
+        <div className="grid grid-cols-4 gap-y-5">
           {products.map((product, index) => (
-            <CarouselItem key={product.id}>
+            <div key={product.id}>
               <ProductCard product={product} index={index} />
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-
-        <CarouselPrevious className="hidden previous sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white text-primary-blue" />
-        <CarouselNext className="hidden next sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white text-primary-blue" />
-      </Carousel>
+        </div>
+      </main>
     </div>
   )
 }

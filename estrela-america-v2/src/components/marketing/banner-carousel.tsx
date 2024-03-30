@@ -31,7 +31,7 @@ export function BannerCarousel() {
         <CarouselContent>
           {urls.map((url, index) => (
             <CarouselItem key={index}>
-              <div className=" w-screen h-full mx-auto sm:w-full sm:h-auto">
+              <div className=" w-screen h-full mx-auto sm:w-full sm:h-[460px]">
                 <div className="flex aspect-auto items-center justify-center">
                   <Image src={url} width={1900} height={890} alt="Banner" />
                 </div>

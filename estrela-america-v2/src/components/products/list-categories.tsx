@@ -44,16 +44,14 @@ const categories = [
 
 export function ListCategories() {
   return (
-    <>
-      <div>
-        <ProductContainerTitle
-          title="Compre pela"
-          titleStrong="categoria"
-          navigate="#"
-        />
-      </div>
+    <div className="py-8">
+      <ProductContainerTitle
+        title="Produtos por"
+        titleStrong="categoria"
+        navigate="#"
+      />
 
-      <div className="pt-4 mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-6xl">
+      <div className="pt-6 mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-6xl">
         <div className="flex justify-start items-center gap-12">
           {categories.map((category) => (
             <main
@@ -70,6 +68,6 @@ export function ListCategories() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -24,7 +24,7 @@ export function ProductContainerTitle({
         className="inline-flex items-center gap-1 text-xs uppercase text-primary-blue hover:underline hover:text-sky-400"
       >
         Ver mais
-        <ChevronRight />
+        <ChevronRight className="size-4" strokeWidth={3} />
       </Link>
     </div>
   )

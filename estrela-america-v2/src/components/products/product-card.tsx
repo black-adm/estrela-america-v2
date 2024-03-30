@@ -21,14 +21,11 @@ interface ProductProps {
   index: number
 }
 
-export function ProductCard({ product, index }: ProductProps) {
+export function ProductCard({ product }: ProductProps) {
   const starsArray: number[] = randomStarsAvaliate()
 
   function randomStarsAvaliate(): number[] {
-    const array: number[] = []
-    for (let i = 0; i < 5; i++) array.push(Math.floor(Math.random() * 5) + 3)
-
-    return array
+    return Array(5).fill(5)
   }
 
   return (
@@ -46,13 +43,12 @@ export function ProductCard({ product, index }: ProductProps) {
           </div>
           <CardTitle className="font-medium">{product.name}</CardTitle>
           <CardDescription className="flex">
-            {starsArray[index] &&
-              Array.from({ length: starsArray[index] }).map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 text-yellow-200 fill-primary-yellow"
-                />
-              ))}
+            {starsArray.map((_, i) => (
+              <Star
+                key={i}
+                className="h-5 w-5 text-yellow-200 fill-primary-yellow"
+              />
+            ))}
           </CardDescription>
         </CardHeader>
 
