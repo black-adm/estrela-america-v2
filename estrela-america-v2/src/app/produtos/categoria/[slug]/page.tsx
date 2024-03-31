@@ -3,8 +3,6 @@ import { ProductCategoryBreadcrumb } from '@/components/category/product-categor
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 
-import Image from 'next/image'
-
 export default function ProductCategory() {
   return (
     <>
@@ -19,13 +17,6 @@ export default function ProductCategory() {
             </div>
           </div>
         </main>
-
-        <Image
-          src="/banner-produtos.png"
-          width={1640}
-          height={624}
-          alt="Banner de produtos"
-        />
       </div>
       <Footer />
     </>

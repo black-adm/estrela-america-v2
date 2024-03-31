@@ -26,19 +26,19 @@ const categoriesAside = [
   },
   {
     name: 'Papelaria',
-    url: '#',
+    url: '/produtos/categoria/casa-e-cozinha',
   },
   {
     name: 'Relógios',
-    url: '#',
+    url: '/produtos/categoria/casa-e-cozinha',
   },
   {
     name: 'Tecnologia',
-    url: '#',
+    url: '/produtos/categoria/casa-e-cozinha',
   },
   {
     name: 'Utilidades',
-    url: '#',
+    url: '/produtos/categoria/casa-e-cozinha',
   },
 ]
 

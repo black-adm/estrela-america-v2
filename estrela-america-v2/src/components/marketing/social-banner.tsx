@@ -1,6 +1,6 @@
 import { Facebook, Instagram, MousePointerClick, Phone } from 'lucide-react'
 import Link from 'next/link'
-import { Whatsapp } from '../logo-whatsapp'
+import { LogoWhatsapp } from '../logo-whatsapp'
 
 export function SocialBanner() {
   const contactPhone = '11950513210'
@@ -34,7 +34,7 @@ export function SocialBanner() {
             className="hover:translate-x-1 transition-transform ease-in duration-200"
             title="whatsapp"
           >
-            <Whatsapp />
+            <LogoWhatsapp className="size-5 fill-black hover:p-1 hover:rounded-full hover:bg-orange-100 hover:fill-[#fe7f2d]" />
           </Link>
 
           <Link

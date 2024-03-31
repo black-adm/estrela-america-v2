@@ -5,6 +5,12 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <>
+      <Image
+        src="/banner-produtos.png"
+        width={1640}
+        height={624}
+        alt="Banner de produtos"
+      />
       <footer className="bg-medium-blue mt-6 pb-5">
         <div className="container p-6 max-w-5xl mx-auto w-full">
           <div className="pt-3 flex items-center justify-between text-center">

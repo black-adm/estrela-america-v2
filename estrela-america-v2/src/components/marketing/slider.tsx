@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { Whatsapp } from '../logo-whatsapp'
+import { LogoWhatsapp } from '../logo-whatsapp'
 import { Card, CardContent, CardDescription, CardHeader } from '../ui/card'
 
 interface SliderProps {
@@ -42,13 +42,13 @@ export function Slider() {
 
             <div className="pt-6 flex justify-start">
               <button className="flex items-center gap-2 py-2.5 px-6 sm:px-8 text-sm sm:text-base rounded-lg bg-green-400 text-black hover:opacity-80">
-                <Whatsapp />
+                <LogoWhatsapp className="size-6" />
                 <span>Fazer um orçamento</span>
               </button>
             </div>
           </div>
 
-          <CardContent className="flex-1 bg-gray-50">
+          <CardContent className="flex-1 bg-primary-silver">
             <div className="flex flex-col items-center justify-center w-full h-auto sm:h-96">
               <div className="w-80 pt-10">
                 <Image
@@ -65,7 +65,7 @@ export function Slider() {
                   <button
                     key={index}
                     className={`w-3 h-3 mx-2 rounded-full md:mx-0 focus:outline-none hover:bg-black ${
-                      currentImage === index ? 'bg-black' : 'bg-primary-silver'
+                      currentImage === index ? 'bg-black' : 'bg-orange-300'
                     }`}
                     onClick={() => handleChange({ color: 'black', index })}
                   ></button>

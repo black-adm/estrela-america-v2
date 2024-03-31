@@ -25,12 +25,12 @@ export function Header() {
 
           <div className="flex items-center">
             <div className="flex gap-6">
-              <Link href="/favoritos" title="favoritos">
-                <Heart className="text-white size-5 lg:size-6 hover:fill-primary-red" />
+              <Link href="#" title="favoritos">
+                <Heart className="text-white size-5 lg:size-6 hover:fill-primary-red hover:text-primary-red" />
               </Link>
 
-              <Link href="/carrinho" title="carrinho">
-                <ShoppingCart className="text-white size-5 lg:size-6 hover:fill-orange-400" />
+              <Link href="#" title="carrinho">
+                <ShoppingCart className="text-white size-5 lg:size-6 hover:fill-white" />
               </Link>
             </div>
           </div>

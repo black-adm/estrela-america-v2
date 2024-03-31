@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
-import { AppProvider } from './_app'
 import './assets/css/globals.css'
 
 const ubuntu = Ubuntu({
@@ -11,7 +10,7 @@ const ubuntu = Ubuntu({
 })
 
 export const metadata: Metadata = {
-  title: 'Estrela América',
+  title: 'Estrela América - Artigos e brindes para presentes',
   description: 'Encontre produtos exclusivos',
 }
 
@@ -22,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={ubuntu.className}>
-      <AppProvider>{children}</AppProvider>
+      <body>{children}</body>
     </html>
   )
 }

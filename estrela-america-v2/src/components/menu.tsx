@@ -16,6 +16,7 @@ import {
   UtensilsCrossed,
   Vegan,
 } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from './ui/button'
 
 export function Menu() {
@@ -26,76 +27,102 @@ export function Menu() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Vegan className="size-4" />
-                    Beleza
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/beleza">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Vegan className="size-4" />
+                      Beleza
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Gift className="size-4" />
-                    Brindes
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/brindes">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Gift className="size-4" />
+                      Brindes
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <BriefcaseIcon className="size-4" />
-                    Bolsas e mochilas
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/bolsas-e-mochilas">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <BriefcaseIcon className="size-4" />
+                      Bolsas e mochilas
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Coffee className="size-4" />
-                    Canecas e garrafas
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/canecas-e-garrafas">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Coffee className="size-4" />
+                      Canecas e garrafas
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <UtensilsCrossed className="size-4" />
-                    Casa e cozinha
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/casa-e-cozinha">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <UtensilsCrossed className="size-4" />
+                      Casa e cozinha
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <NotebookPen className="size-4" />
-                    Papelaria
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/papelaria">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <NotebookPen className="size-4" />
+                      Papelaria
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Timer className="size-4" />
-                    Relógios
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/relogios">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Timer className="size-4" />
+                      Relógios
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Cpu className="size-4" />
-                    Tecnologia
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/tecnologia">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Cpu className="size-4" />
+                      Tecnologia
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
-                  <div className="flex items-center gap-1.5">
-                    <Box className="size-4" />
-                    Utilidades
-                  </div>
-                </Button>
+                <Link href="/produtos/categoria/utilidades">
+                  <Button className="bg-transparent text-white text-xs hover:bg-orange-300 hover:text-black focus:bg-orange-300 focus:text-black">
+                    <div className="flex items-center gap-1.5">
+                      <Box className="size-4" />
+                      Utilidades
+                    </div>
+                  </Button>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

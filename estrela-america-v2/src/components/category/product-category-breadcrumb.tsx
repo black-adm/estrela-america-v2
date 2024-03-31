@@ -33,7 +33,7 @@ export function ProductCategoryBreadcrumb() {
       </Breadcrumb>
 
       <div className="py-7 flex flex-col gap-y-2">
-        <h2 className="text-2xl font-medium">Category name</h2>
+        <h2 className="text-2xl font-medium">Categoria</h2>
         <p className="text-sm text-muted-foreground">
           Exibindo todos os{' '}
           <strong className="text-black">17 resultados</strong> relacionados a

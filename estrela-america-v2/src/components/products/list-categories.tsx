@@ -1,44 +1,41 @@
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { ProductContainerTitle } from './product-container-title'
 
-const categories = [
+const categoriesIcons = [
   {
     id: 1,
     name: 'Beleza',
-    imageUrl:
-      'https://static.vecteezy.com/system/resources/previews/008/550/443/original/3d-icon-cosmetic-luxurious-mascara-png.png',
+    imageUrl: '/beleza.png',
   },
   {
     id: 2,
     name: 'Brindes',
-    imageUrl:
-      'https://static.vecteezy.com/system/resources/previews/009/596/501/original/3d-illustration-of-gift-icon-png.png',
+    imageUrl: '/brindes.png',
   },
   {
     id: 3,
     name: 'Casa e cozinha',
-    imageUrl:
-      'https://static.vecteezy.com/system/resources/previews/028/574/472/non_2x/kitchen-3d-rendering-icon-illustration-free-png.png',
+    imageUrl: '/casa-cozinha.png',
   },
   {
     id: 4,
     name: 'Papelaria',
-    imageUrl: 'https://github.com/shadcn.png',
+    imageUrl: '/papelaria.png',
   },
   {
     id: 5,
     name: 'Relógios',
-    imageUrl: '',
+    imageUrl: '/relogios.png',
   },
   {
     id: 6,
     name: 'Tecnologia',
-    imageUrl: 'https://github.com/shadcn.png',
+    imageUrl: '/tecnologia.png',
   },
   {
     id: 7,
     name: 'Utilidades',
-    imageUrl: 'https://github.com/shadcn.png',
+    imageUrl: '/utilidades.png',
   },
 ]
 
@@ -48,12 +45,12 @@ export function ListCategories() {
       <ProductContainerTitle
         title="Produtos por"
         titleStrong="categoria"
-        navigate="#"
+        navigate="/categorias"
       />
 
       <div className="pt-6 mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-6xl">
         <div className="flex justify-start items-center gap-12">
-          {categories.map((category) => (
+          {categoriesIcons.map((category) => (
             <main
               key={category.id}
               className="flex flex-col space-y-2 items-center"

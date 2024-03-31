@@ -1,6 +1,6 @@
 import { Heart, ShoppingCart, Star } from 'lucide-react'
 import Image from 'next/image'
-import { Whatsapp } from '../logo-whatsapp'
+import { LogoWhatsapp } from '../logo-whatsapp'
 import { Button } from '../ui/button'
 import {
   Card,
@@ -31,8 +31,8 @@ export function ProductCard({ product }: ProductProps) {
   return (
     <div className="p-1">
       <Card className="h-auto w-60 hover:border hover:border-primary-orange hover:opacity-80">
-        <CardHeader>
-          <div className="w-full overflow-hidden lg:aspect-none group-hover:opacity-75 h-40">
+        <CardHeader className="bg-primary-silver w-full rounded-t-xl p-1">
+          <div className="w-full overflow-hidden lg:aspect-none h-40">
             <Image
               src={product.imageSrc}
               alt={product.imageAlt}
@@ -41,6 +41,9 @@ export function ProductCard({ product }: ProductProps) {
               className="h-28 w-28 p-5 object-contain object-center sm:w-52 sm:h-52 xl:h-full xl:w-full"
             />
           </div>
+        </CardHeader>
+
+        <div className="p-4 flex flex-col justify-center items-baseline">
           <CardTitle className="font-medium">{product.name}</CardTitle>
           <CardDescription className="flex">
             {starsArray.map((_, i) => (
@@ -50,7 +53,7 @@ export function ProductCard({ product }: ProductProps) {
               />
             ))}
           </CardDescription>
-        </CardHeader>
+        </div>
 
         <CardContent>
           <div className="flex justify-start items-center">
@@ -72,9 +75,9 @@ export function ProductCard({ product }: ProductProps) {
             </div>
           </div>
           <CardFooter className="pt-5">
-            <Button className="inline-flex items-center gap-1 w-full text-black bg-gradient-to-r from-primary-orange to-orange-400 hover:bg-gradient-to-b hover:from-primary-green hover:to-green-300">
+            <Button className="inline-flex items-center gap-1 w-full text-black bg-gradient-to-r from-primary-orange to-orange-400 hover:bg-gradient-to-b hover:from-primary-green hover:to-green-400">
               Comprar
-              <Whatsapp />
+              <LogoWhatsapp className="size-5" />
             </Button>
           </CardFooter>
         </CardContent>
