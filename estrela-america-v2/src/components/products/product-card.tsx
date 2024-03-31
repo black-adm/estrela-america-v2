@@ -1,7 +1,6 @@
-import { Heart, ShoppingCart, Star } from 'lucide-react'
 import Image from 'next/image'
-import { LogoWhatsapp } from '../logo-whatsapp'
-import { Button } from '../ui/button'
+
+import { Heart, ShoppingCart } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -10,6 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card'
+import { BuyProductButton } from './buy-product-button'
+import { ProductAvailable } from './product-available'
 
 interface ProductProps {
   product: {
@@ -22,10 +23,8 @@ interface ProductProps {
 }
 
 export function ProductCard({ product }: ProductProps) {
-  const starsArray: number[] = randomStarsAvaliate()
-
-  function randomStarsAvaliate(): number[] {
-    return Array(5).fill(5)
+  function handleBuyProduct() {
+    console.log('Produto selecionado:', product)
   }
 
   return (
@@ -46,12 +45,7 @@ export function ProductCard({ product }: ProductProps) {
         <div className="p-4 flex flex-col justify-center items-baseline">
           <CardTitle className="font-medium">{product.name}</CardTitle>
           <CardDescription className="flex">
-            {starsArray.map((_, i) => (
-              <Star
-                key={i}
-                className="h-5 w-5 text-yellow-200 fill-primary-yellow"
-              />
-            ))}
+            <ProductAvailable />
           </CardDescription>
         </div>
 
@@ -74,11 +68,12 @@ export function ProductCard({ product }: ProductProps) {
               </button>
             </div>
           </div>
+
           <CardFooter className="pt-5">
-            <Button className="inline-flex items-center gap-1 w-full text-black bg-gradient-to-r from-primary-orange to-orange-400 hover:bg-gradient-to-b hover:from-primary-green hover:to-green-400">
-              Comprar
-              <LogoWhatsapp className="size-5" />
-            </Button>
+            <BuyProductButton
+              onClick={handleBuyProduct}
+              selectedProduct={product}
+            />
           </CardFooter>
         </CardContent>
       </Card>

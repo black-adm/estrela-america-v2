@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Heart, ShoppingCart } from 'lucide-react'
-import { SocialBanner } from './marketing/social-banner'
+import { SocialBanner } from '../marketing/social-banner'
 import { Menu } from './menu'
 import { SearchInput } from './search-input'
 

@@ -1,7 +1,7 @@
+import { Header } from '@/components/category/header'
 import { ProductCategoryAside } from '@/components/category/product-category-aside'
 import { ProductCategoryBreadcrumb } from '@/components/category/product-category-breadcrumb'
 import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
 
 export default function ProductCategory() {
   return (

@@ -1,5 +1,5 @@
+import { ProductContainerTitle } from '../products/product-container-title'
 import { Avatar, AvatarImage } from '../ui/avatar'
-import { ProductContainerTitle } from './product-container-title'
 
 const categoriesIcons = [
   {
@@ -43,7 +43,7 @@ export function ListCategories() {
   return (
     <div className="py-8">
       <ProductContainerTitle
-        title="Produtos por"
+        title="Pesquise por"
         titleStrong="categoria"
         navigate="/categorias"
       />
@@ -55,7 +55,7 @@ export function ListCategories() {
               key={category.id}
               className="flex flex-col space-y-2 items-center"
             >
-              <Avatar className="bg-primary-silver h-24 w-24">
+              <Avatar className="bg-primary-silver h-24 w-24 hover:border hover:border-primary-orange">
                 <AvatarImage src={category.imageUrl} />
               </Avatar>
               <p className="text-sm font-medium text-muted-foreground">

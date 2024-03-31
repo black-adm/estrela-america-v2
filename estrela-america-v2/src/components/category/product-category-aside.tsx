@@ -1,7 +1,8 @@
 import { TextQuote } from 'lucide-react'
-import Link from 'next/link'
 import { ScrollArea } from '../ui/scroll-area'
 import { Separator } from '../ui/separator'
+
+import Link from 'next/link'
 
 const categoriesAside = [
   {

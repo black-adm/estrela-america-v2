@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { ProductContainerTitle } from './product-container-title'
 

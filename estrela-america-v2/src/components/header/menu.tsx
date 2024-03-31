@@ -5,6 +5,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
+
 import {
   Box,
   BriefcaseIcon,
@@ -16,8 +17,9 @@ import {
   UtensilsCrossed,
   Vegan,
 } from 'lucide-react'
+import { Button } from '../ui/button'
+
 import Link from 'next/link'
-import { Button } from './ui/button'
 
 export function Menu() {
   return (

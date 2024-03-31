@@ -17,7 +17,7 @@ export function SearchInput() {
     const query = data.q
 
     if (!query) return null
-    router.push(`/search?q=${query}`)
+    router.push(`/produtos/search?q=${query}`)
   }
 
   return (

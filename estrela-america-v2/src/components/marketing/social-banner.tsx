@@ -1,6 +1,7 @@
 import { Facebook, Instagram, MousePointerClick, Phone } from 'lucide-react'
-import Link from 'next/link'
 import { LogoWhatsapp } from '../logo-whatsapp'
+
+import Link from 'next/link'
 
 export function SocialBanner() {
   const contactPhone = '11950513210'
