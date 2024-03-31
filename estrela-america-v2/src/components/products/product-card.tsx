@@ -30,7 +30,7 @@ export function ProductCard({ product }: ProductProps) {
 
   return (
     <div className="p-1">
-      <Card className="h-auto w-60">
+      <Card className="h-auto w-60 hover:border hover:border-primary-orange hover:opacity-80">
         <CardHeader>
           <div className="w-full overflow-hidden lg:aspect-none group-hover:opacity-75 h-40">
             <Image

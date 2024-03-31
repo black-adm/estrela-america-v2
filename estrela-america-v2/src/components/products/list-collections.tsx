@@ -36,7 +36,10 @@ export function ListCollections() {
       <div className="pt-5 mx-auto max-w-6xl px-4 sm:mt-0 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-6">
           {callouts.map((callout) => (
-            <Card key={callout.name}>
+            <Card
+              key={callout.name}
+              className="hover:border hover:border-primary-orange hover:opacity-80"
+            >
               <Image
                 src={callout.imageSrc}
                 alt={callout.imageAlt}
