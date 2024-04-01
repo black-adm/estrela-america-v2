@@ -54,7 +54,7 @@ export function ProductCategoryAside() {
           </h4>
           {categoriesAside.map((category) => (
             <>
-              <div className="text-sm">
+              <div className="text-sm" key={category.name}>
                 <Link
                   href={category.url}
                   className="text-muted-foreground hover:text-light-blue"

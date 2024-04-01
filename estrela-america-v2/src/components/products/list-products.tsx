@@ -59,7 +59,6 @@ export function ListProducts() {
             </CarouselItem>
           ))}
         </CarouselContent>
-
         <CarouselPrevious className="hidden previous sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white text-primary-blue" />
         <CarouselNext className="hidden next sm:flex sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white text-primary-blue" />
       </Carousel>
