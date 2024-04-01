@@ -25,6 +25,7 @@ export function Slider() {
   const handleChange = ({ color, index }: SliderProps) => {
     setCurrentColor(color)
     setCurrentImage(index)
+    console.log(currentColor)
   }
 
   return (

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Heart, ShoppingCart } from 'lucide-react'
+import { Suspense } from 'react'
 import { SocialBanner } from '../marketing/social-banner'
 import { Menu } from './menu'
 import { SearchInput } from './search-input'
@@ -21,7 +22,9 @@ export function Header() {
               alt="logo"
             />
           </Link>
-          <SearchInput />
+          <Suspense>
+            <SearchInput />
+          </Suspense>
 
           <div className="flex items-center">
             <div className="flex gap-6">
