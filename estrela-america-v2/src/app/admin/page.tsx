@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { HeroPattern } from '@/components/admin/hero-pattern'
 import { AdminForm } from './admin-form'
 
 export default function AdminPage() {
   return (
     <>
-      <div className="bg-pattern bg-cover bg-no-repeat pt-12 sm:pt-24 h-screen w-full">
-        <div className="bg-white py-10 px-16 border-2 border-gray-100 mx-auto flex w-full flex-col justify-center space-y-6 rounded-md sm:w-[480px]">
+      <div className="bg-gradient-to-r from-slate-900 to-medium-blue pt-12 sm:pt-24 xl:pt-44 h-screen w-full">
+        <div className="relative z-10 py-10 px-16 mx-auto flex w-full flex-col justify-center space-y-6 rounded-md sm:w-[480px] md:px-20">
           <div className="w-full flex justify-center">
             <Link href="/">
               <Image
@@ -20,10 +21,10 @@ export default function AdminPage() {
             </Link>
           </div>
           <div className="flex flex-col space-y-2 text-center py-4">
-            <h1 className="text-2xl font-semibold tracking-tight">
+            <h1 className="text-2xl text-white font-semibold tracking-tight">
               Acesso de administrador
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-orange-200">
               Entre com as suas credenciais de acesso.
             </p>
           </div>
@@ -33,6 +34,7 @@ export default function AdminPage() {
             Todos os direitos reservados.
           </p>
         </div>
+        <HeroPattern />
       </div>
     </>
   )

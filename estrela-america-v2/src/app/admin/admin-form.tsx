@@ -10,6 +10,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { cn } from '@/lib/utils'
 import { ValidateAuthForm, validateAuthFormSchema } from '@/schemas/auth-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Lock } from 'lucide-react'
 
 type AdminFormProps = React.HTMLAttributes<HTMLDivElement>
 
@@ -44,7 +45,7 @@ export function AdminForm({ className, ...props }: AdminFormProps) {
               Email
             </Label>
             <Input
-              className="placeholder:text-xs placeholder:tracking-wide"
+              className="bg-white placeholder:text-xs placeholder:tracking-wide border-primary-blue focus:border-primary-orange"
               placeholder="admin@exemplo.com"
               type="email"
               autoCapitalize="none"
@@ -60,7 +61,7 @@ export function AdminForm({ className, ...props }: AdminFormProps) {
               Senha
             </Label>
             <Input
-              className="placeholder:text-xs placeholder:tracking-wide"
+              className="bg-white placeholder:text-xs placeholder:tracking-wide border-primary-blue focus:border-primary-orange"
               placeholder="***********"
               type="password"
               autoCapitalize="none"
@@ -70,7 +71,11 @@ export function AdminForm({ className, ...props }: AdminFormProps) {
             />
           </div>
 
-          <Button type="submit" className="bg-primary-orange">
+          <Button
+            type="submit"
+            className="inline-flex items-center gap-1.5 bg-primary-orange mt-5 hover:bg-primary-blue"
+          >
+            <Lock className="size-4" />
             Fazer login
           </Button>
         </div>
