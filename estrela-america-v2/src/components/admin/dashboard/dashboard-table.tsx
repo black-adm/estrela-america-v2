@@ -8,9 +8,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
@@ -35,14 +32,10 @@ import {
   useReactTable,
   VisibilityState,
 } from '@tanstack/react-table'
-import {
-  ArrowUpDown,
-  ChevronDown,
-  Copy,
-  Info,
-  MoreHorizontal,
-} from 'lucide-react'
-import { Products } from './products-data'
+import { format } from 'date-fns'
+import { ArrowUpDown, ChevronDown } from 'lucide-react'
+import DashboardActions from './dashboard-acions'
+import { Products, useProducts } from './products-data'
 
 export const columns: ColumnDef<Products>[] = [
   {
@@ -72,7 +65,11 @@ export const columns: ColumnDef<Products>[] = [
   {
     accessorKey: 'id',
     header: 'ID',
-    cell: ({ row }) => <div className="capitalize">{row.getValue('id')}</div>,
+    cell: ({ row }) => (
+      <div className="text-xs text-muted-foreground tracking-tighter">
+        {row.getValue('id')}
+      </div>
+    ),
   },
   {
     accessorKey: 'name',
@@ -104,55 +101,36 @@ export const columns: ColumnDef<Products>[] = [
     },
   },
   {
-    accessorKey: 'category',
-    header: 'Categoria',
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue('category')}</div>
-    ),
-  },
-  {
     accessorKey: 'createdAt',
-    header: 'Data',
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue('createdAt')}</div>
+    header: () => (
+      <div className="text-right text-xs sm:text-sm">Data de cadastro</div>
     ),
+    cell: ({ row }) => {
+      const createdAt = new Date(row.getValue('createdAt'))
+      const formattedDate = format(createdAt, 'dd/MM/yyyy')
+
+      return (
+        <div className="text-right capitalize text-xs sm:text-sm">
+          {formattedDate}
+        </div>
+      )
+    },
   },
   {
     id: 'actions',
+    header: () => (
+      <div className="text-right text-xs sm:text-sm sm:pr-7">Ações</div>
+    ),
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original
-
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Ações</DropdownMenuLabel>
-            <DropdownMenuItem
-              className="inline-flex items-center gap-1.5 text-xs"
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              <Copy className="size-3" />
-              Copiar ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="inline-flex items-center gap-1.5 text-xs">
-              <Info className="size-3.5" />
-              Ver detalhes
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )
+      const paymentId = row.original.id
+      return <DashboardActions paymentId={paymentId} />
     },
   },
 ]
 
 export function DashboardTable() {
+  const products: Products[] = useProducts()
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
@@ -162,7 +140,7 @@ export function DashboardTable() {
   const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
-    data,
+    data: products,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -185,9 +163,9 @@ export function DashboardTable() {
       <div className="flex items-center py-4">
         <Input
           placeholder="Pesquisar produtos"
-          value={(table.getColumn('email')?.getFilterValue() as string) ?? ''}
+          value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
           onChange={(event) =>
-            table.getColumn('email')?.setFilterValue(event.target.value)
+            table.getColumn('name')?.setFilterValue(event.target.value)
           }
           className="max-w-sm placeholder:text-xs"
         />

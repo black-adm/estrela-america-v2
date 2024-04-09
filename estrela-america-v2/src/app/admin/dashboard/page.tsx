@@ -1,6 +1,11 @@
-import { DashboardHeader } from '@/components/dashboard/dashboard-header'
-import { DashboardTable } from '@/components/dashboard/dashboard-table'
+'use client'
+
+import { DashboardHeader } from '@/components/admin/dashboard/dashboard-header'
+import { DashboardTable } from '@/components/admin/dashboard/dashboard-table'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Boxes } from 'lucide-react'
+
+const queryClient = new QueryClient()
 
 export default function AdminDashboard() {
   return (
@@ -12,7 +17,9 @@ export default function AdminDashboard() {
             Meus produtos
             <Boxes />
           </h1>
-          <DashboardTable />
+          <QueryClientProvider client={queryClient}>
+            <DashboardTable />
+          </QueryClientProvider>
         </main>
       </div>
     </>
