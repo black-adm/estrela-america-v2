@@ -8,18 +8,17 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useToast } from '@/components/ui/use-toast'
 import { cn } from '@/lib/utils'
-import { ValidateAuthForm, validateAuthFormSchema } from '@/schemas/auth-schema'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { Lock } from 'lucide-react'
 
 type AdminFormProps = React.HTMLAttributes<HTMLDivElement>
 
 export function AdminForm({ className, ...props }: AdminFormProps) {
+  const form = useForm()
   const { toast } = useToast()
   const router = useRouter()
 
-  const { handleSubmit, register } = useForm<ValidateAuthForm>({
-    resolver: zodResolver(validateAuthFormSchema),
+  const handleSubmit = form.handleSubmit((data) => {
+    console.log(data)
   })
 
   async function handleAuthentication() {
@@ -38,21 +37,21 @@ export function AdminForm({ className, ...props }: AdminFormProps) {
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
-      <form onSubmit={handleSubmit(handleAuthentication)}>
+      <form onSubmit={handleSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
               Email
             </Label>
             <Input
-              className="bg-white placeholder:text-xs placeholder:tracking-wide border-primary-blue focus:border-primary-orange"
+              className="bg-white placeholder:text-xs placeholder:tracking-wide border-orange-200 focus:border-primary-orange"
               placeholder="admin@exemplo.com"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
               maxLength={30}
-              {...register('email')}
+              {...form.register('email')}
             />
           </div>
 
@@ -61,13 +60,13 @@ export function AdminForm({ className, ...props }: AdminFormProps) {
               Senha
             </Label>
             <Input
-              className="bg-white placeholder:text-xs placeholder:tracking-wide border-primary-blue focus:border-primary-orange"
+              className="bg-white placeholder:text-xs placeholder:tracking-wide border-orange-200 focus:border-primary-orange"
               placeholder="***********"
               type="password"
               autoCapitalize="none"
               autoCorrect="off"
               maxLength={20}
-              {...register('password')}
+              {...form.register('password')}
             />
           </div>
 

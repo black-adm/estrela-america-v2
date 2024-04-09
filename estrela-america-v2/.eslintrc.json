@@ -9,6 +9,6 @@
     "next/",
     "src/components/ui/*.tsx",
     "src/lib/*.ts",
-    "src/api/**"
+    "src/api/**/**"
   ]
 }
