@@ -5,13 +5,6 @@ import * as React from 'react'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Input } from '@/components/ui/input'
-import {
   Table,
   TableBody,
   TableCell,
@@ -20,6 +13,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
+import { Input } from '@/components/ui/input'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -33,8 +27,10 @@ import {
   VisibilityState,
 } from '@tanstack/react-table'
 import { format } from 'date-fns'
-import { ArrowUpDown, ChevronDown } from 'lucide-react'
+import { ArrowUpDown } from 'lucide-react'
 import DashboardActions from './dashboard-acions'
+import { DashboardAddProduct } from './dashboard-add-product'
+import DashboardFilters from './dashboard-filters'
 import { Products, useProducts } from './products-data'
 
 export const columns: ColumnDef<Products>[] = [
@@ -66,9 +62,7 @@ export const columns: ColumnDef<Products>[] = [
     accessorKey: 'id',
     header: 'ID',
     cell: ({ row }) => (
-      <div className="text-xs text-muted-foreground tracking-tighter">
-        {row.getValue('id')}
-      </div>
+      <div className="text-xs tracking-tighter">{row.getValue('id')}</div>
     ),
   },
   {
@@ -124,7 +118,11 @@ export const columns: ColumnDef<Products>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const paymentId = row.original.id
-      return <DashboardActions paymentId={paymentId} />
+      return (
+        <div className="text-black">
+          <DashboardActions paymentId={paymentId} />
+        </div>
+      )
     },
   },
 ]
@@ -160,7 +158,7 @@ export function DashboardTable() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex justify-between items-center py-4">
         <Input
           placeholder="Pesquisar produtos"
           value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
@@ -169,33 +167,11 @@ export function DashboardTable() {
           }
           className="max-w-sm placeholder:text-xs"
         />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Filtros <ChevronDown className="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
 
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex justify-end items-center gap-2">
+          <DashboardAddProduct />
+          <DashboardFilters table={table} />
+        </div>
       </div>
 
       <div className="rounded-md border">
@@ -205,7 +181,7 @@ export function DashboardTable() {
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="text-black">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -225,6 +201,7 @@ export function DashboardTable() {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  className="text-muted-foreground"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
