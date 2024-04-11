@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/table'
 
 import { Input } from '@/components/ui/input'
+import { Products, useProducts } from '@/data/products-data'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -26,12 +27,13 @@ import {
   useReactTable,
   VisibilityState,
 } from '@tanstack/react-table'
+
 import { format } from 'date-fns'
 import { ArrowUpDown } from 'lucide-react'
 import DashboardActions from './dashboard-acions'
 import { DashboardAddProduct } from './dashboard-add-product'
 import DashboardFilters from './dashboard-filters'
-import { Products, useProducts } from './products-data'
+import { DashboardTableSkeleton } from './dashboard-table-skeleton'
 
 export const columns: ColumnDef<Products>[] = [
   {
@@ -215,12 +217,15 @@ export function DashboardTable() {
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  Nenhum produto cadastrado.
-                </TableCell>
+                {columns.length > 0 ? (
+                  <TableCell colSpan={columns.length}>
+                    <DashboardTableSkeleton />
+                  </TableCell>
+                ) : (
+                  <TableCell colSpan={columns.length}>
+                    Nenhum produto cadastrado
+                  </TableCell>
+                )}
               </TableRow>
             )}
           </TableBody>
