@@ -10,14 +10,15 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
-import { Tag } from 'lucide-react'
+import { PlusCircleIcon, Tag } from 'lucide-react'
 
 export function DashboardAddCategory() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button className="w-20 bg-primary-orange hover:bg-orange-300">
+      <DialogTrigger asChild className="flex items-center">
+        <Button className="w-20 text-xs bg-primary-orange hover:bg-orange-300">
           Criar
+          <PlusCircleIcon className="ml-1.5 h-5 w-5" />
         </Button>
       </DialogTrigger>
 

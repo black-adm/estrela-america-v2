@@ -8,7 +8,7 @@ import {
 import { useReactTable } from '@tanstack/react-table'
 import { ChevronDown } from 'lucide-react'
 import React from 'react'
-import { Products } from './products-data'
+import { Products } from '../../../data/products-data'
 
 interface DashboardFiltersProps {
   table: ReturnType<typeof useReactTable<Products>>
