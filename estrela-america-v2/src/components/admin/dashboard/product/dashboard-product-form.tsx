@@ -3,7 +3,6 @@ import { Label } from '@/components/ui/label'
 
 import { Info } from 'lucide-react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
-import { DashboardAddCategory } from './dashboard-add-category'
 import { ValidateProductForm } from './dashboard-add-product'
 
 interface DashboardProductFormProps {
@@ -30,7 +29,7 @@ export function DashboardProductForm({
           />
         </div>
         {errors.name && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.name.message}
           </span>
@@ -48,7 +47,7 @@ export function DashboardProductForm({
           />
         </div>
         {errors.description && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.description.message}
           </span>
@@ -66,7 +65,7 @@ export function DashboardProductForm({
           />
         </div>
         {errors.price && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.price.message}
           </span>
@@ -84,7 +83,7 @@ export function DashboardProductForm({
           />
         </div>
         {errors.imageSrc && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.imageSrc.message}
           </span>
@@ -102,30 +101,9 @@ export function DashboardProductForm({
           />
         </div>
         {errors.imageAlt && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.imageAlt.message}
-          </span>
-        )}
-
-        <div className="grid items-center gap-2 px-2">
-          <Label htmlFor="category" className="text-left">
-            Categoria
-          </Label>
-          <div className="grid grid-cols-4 items-center gap-x-3 pr-1">
-            <Input
-              placeholder="Categoria do produto"
-              className="col-span-3 placeholder:text-xs w-full"
-              maxLength={30}
-              {...register('category')}
-            />
-            <DashboardAddCategory />
-          </div>
-        </div>
-        {errors.category && (
-          <span className="flex items-center gap-x-2.5 text-xs font-medium tracking-tight text-primary-red">
-            <Info className="h-4 w-4" />
-            {errors.category.message}
           </span>
         )}
       </div>

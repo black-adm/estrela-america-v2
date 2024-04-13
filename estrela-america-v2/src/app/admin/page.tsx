@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { HeroPattern } from '@/components/admin/hero-pattern'
+import { HeroPattern } from '@/app/admin/hero-pattern'
 import { AdminForm } from './admin-form'
 
 export default function AdminPage() {

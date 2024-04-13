@@ -16,8 +16,8 @@ export const validateProductFormSchema = z.object({
     .max(80, 'A URL da imagem não pode ser maior que 80 caracteres.'),
   imageAlt: z
     .string()
-    .min(3, 'A legenda da imagem deve possuir no minímo 3 caracteres.')
-    .max(30, 'A legenda da imagem não pode ser maior que 30 caracteres.'),
+    .min(3, 'A legenda deve possuir no minímo 3 caracteres.')
+    .max(30, 'A legenda não pode ser maior que 30 caracteres.'),
   category: z
     .string()
     .min(3, 'A categoria deve possuir no minímo 3 caracteres.')

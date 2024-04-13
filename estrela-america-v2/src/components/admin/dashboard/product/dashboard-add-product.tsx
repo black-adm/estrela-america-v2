@@ -20,6 +20,7 @@ import { Loader2, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { DashboardSelectCategory } from '../category/dashboard-select-category'
 import { DashboardProductForm } from './dashboard-product-form'
 
 export type ValidateProductForm = z.infer<typeof validateProductFormSchema>
@@ -92,6 +93,8 @@ export function DashboardAddProduct() {
 
         <form onSubmit={handleSubmit(createProduct)}>
           <DashboardProductForm register={register} errors={errors} />
+          <DashboardSelectCategory register={register} errors={errors} />
+
           <SheetFooter>
             <SheetClose asChild>
               <Button

@@ -31,9 +31,9 @@ import {
 import { format } from 'date-fns'
 import { ArrowUpDown } from 'lucide-react'
 import DashboardActions from './dashboard-acions'
-import { DashboardAddProduct } from './dashboard-add-product'
 import DashboardFilters from './dashboard-filters'
 import { DashboardTableSkeleton } from './dashboard-table-skeleton'
+import { DashboardAddProduct } from './product/dashboard-add-product'
 
 export const columns: ColumnDef<Products>[] = [
   {
