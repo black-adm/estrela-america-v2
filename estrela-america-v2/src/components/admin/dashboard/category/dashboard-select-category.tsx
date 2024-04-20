@@ -10,15 +10,15 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Categories, useCategories } from '@/data/categories-data'
+
 import { Info } from 'lucide-react'
 import { useState } from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { ValidateProductForm } from '../product/dashboard-add-product'
-import { DashboardAddCategory } from './dashboard-add-category'
 
 interface DashboardSelectCategoryProps {
   register: UseFormRegister<ValidateProductForm>
-  errors: FieldErrors<ValidateProductForm>
+  errors?: FieldErrors<ValidateProductForm>
 }
 
 export function DashboardSelectCategory({
@@ -35,12 +35,12 @@ export function DashboardSelectCategory({
   }
 
   return (
-    <div className="grid items-center gap-2 px-2 pb-7">
-      <Label htmlFor="category" className="text-left">
+    <div className="grid items-center gap-2 pb-8">
+      <Label htmlFor="category" className="text-left ml-1">
         Categoria
       </Label>
 
-      <div className="grid grid-cols-4 items-center gap-x-3 pr-1">
+      <div className="grid grid-cols-3 items-center gap-x-3">
         <Select>
           <SelectTrigger className="col-span-3 w-full">
             <SelectValue placeholder="Selecione a categoria" />
@@ -64,7 +64,6 @@ export function DashboardSelectCategory({
             <span>Nenhuma categoria cadastrada.</span>
           )}
         </Select>
-        <DashboardAddCategory />
       </div>
       {errors?.category && (
         <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">

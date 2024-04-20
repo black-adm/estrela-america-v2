@@ -14,12 +14,15 @@ import {
 import { validateProductFormSchema } from '@/schemas/product-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { Separator } from '@/components/ui/separator'
 import { useToast } from '@/components/ui/use-toast'
 import { api } from '@/lib/axios'
 import { Loader2, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Toaster } from 'sonner'
 import { z } from 'zod'
+import { DashboardAddCategory } from '../category/dashboard-add-category'
 import { DashboardSelectCategory } from '../category/dashboard-select-category'
 import { DashboardProductForm } from './dashboard-product-form'
 
@@ -119,6 +122,11 @@ export function DashboardAddProduct() {
             </Button>
           </SheetFooter>
         </form>
+        <div className="mt-10 mx-5">
+          <Separator />
+        </div>
+        <DashboardAddCategory />
+        <Toaster richColors />
       </SheetContent>
     </Sheet>
   )

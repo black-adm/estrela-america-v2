@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -6,15 +8,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import {
-  Copy,
-  Info,
-  MoreHorizontal,
-  Pencil,
-  Settings2,
-  Trash,
-} from 'lucide-react'
-import React from 'react'
+
+import { Copy, Info, MoreHorizontal, Settings2, Trash } from 'lucide-react'
+import { DashboardEditProduct } from './product/dashboard-edit-product'
 
 interface DashboardActionsProps {
   paymentId: string
@@ -62,8 +58,7 @@ const DashboardActions: React.FC<DashboardActionsProps> = ({ paymentId }) => {
             className="inline-flex items-center gap-1.5 text-xs"
             onClick={handleCopyId}
           >
-            <Pencil className="size-3.5" />
-            Editar produto
+            <DashboardEditProduct />
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="inline-flex items-center gap-1.5 text-xs">
