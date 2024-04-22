@@ -32,6 +32,7 @@ import { format } from 'date-fns'
 import { ArrowUpDown } from 'lucide-react'
 import DashboardActions from './dashboard-acions'
 import DashboardFilters from './dashboard-filters'
+import { DashboardOperations } from './dashboard-operations'
 import { DashboardTableSkeleton } from './dashboard-table-skeleton'
 import { DashboardAddProduct } from './product/dashboard-add-product'
 
@@ -61,10 +62,10 @@ export const columns: ColumnDef<Products>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: 'id',
-    header: 'ID',
+    accessorKey: 'sku',
+    header: 'SKU',
     cell: ({ row }) => (
-      <div className="text-xs tracking-tighter">{row.getValue('id')}</div>
+      <div className="text-xs tracking-tighter">{row.getValue('sku')}</div>
     ),
   },
   {
@@ -119,10 +120,11 @@ export const columns: ColumnDef<Products>[] = [
     ),
     enableHiding: false,
     cell: ({ row }) => {
-      const paymentId = row.original.id
+      const paymentId = row.original.sku
       return (
-        <div className="text-black">
+        <div className="flex items-end justify-end text-black mr-3">
           <DashboardActions paymentId={paymentId} />
+          <DashboardOperations />
         </div>
       )
     },

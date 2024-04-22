@@ -54,7 +54,7 @@ export function DashboardAddCategory() {
   }
 
   return (
-    <div className="pt-10 px-2 flex justify-between items-center">
+    <div className="pt-8 px-2 flex justify-between items-center">
       <div className="px-3 text-sm text-muted-foreground tracking-wide">
         <p>
           Se preferir,

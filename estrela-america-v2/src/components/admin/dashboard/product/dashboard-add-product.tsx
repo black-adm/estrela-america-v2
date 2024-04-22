@@ -14,13 +14,11 @@ import {
 import { validateProductFormSchema } from '@/schemas/product-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { Separator } from '@/components/ui/separator'
-import { useToast } from '@/components/ui/use-toast'
 import { api } from '@/lib/axios'
 import { Loader2, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Toaster } from 'sonner'
+import { toast, Toaster } from 'sonner'
 import { z } from 'zod'
 import { DashboardAddCategory } from '../category/dashboard-add-category'
 import { DashboardSelectCategory } from '../category/dashboard-select-category'
@@ -30,7 +28,6 @@ export type ValidateProductForm = z.infer<typeof validateProductFormSchema>
 
 export function DashboardAddProduct() {
   const [isLoading, setIsLoading] = useState(false)
-  const { toast } = useToast()
 
   const {
     handleSubmit,
@@ -39,40 +36,32 @@ export function DashboardAddProduct() {
     formState: { errors = {} },
   } = useForm<ValidateProductForm>({
     resolver: zodResolver(validateProductFormSchema),
+    shouldUnregister: true,
   })
 
   async function createProduct() {
     setIsLoading(true)
-
     const formData = {
       name: watch('name'),
       description: watch('description'),
-      price: watch('price'),
+      price: parseInt(watch('price')),
       imageSrc: watch('imageSrc'),
       imageAlt: watch('imageAlt'),
       category: watch('category'),
     }
 
-    try {
-      const response = await api.post('/products', formData, {
-        headers: { 'Content-Type': 'application/json' },
+    await api
+      .post('/products', formData)
+      .then((response) => {
+        console.log(response)
+        setIsLoading(false)
+        toast.success('Produto cadastrado com sucesso!')
       })
-      setIsLoading(true)
-      toast({
-        title: 'Produto cadastrado com sucesso!',
-        description: 'Redirecionando ...',
+      .catch((error) => {
+        console.log(error)
+        setIsLoading(false)
+        toast.error('Erro ao cadastrar produto!')
       })
-      console.log(response)
-      return response
-    } catch (err) {
-      setIsLoading(false)
-      console.error(err)
-      toast({
-        variant: 'destructive',
-        title: 'Erro ao cadastrar produto!',
-        description: 'Tente novamente.',
-      })
-    }
   }
 
   return (
@@ -96,7 +85,11 @@ export function DashboardAddProduct() {
 
         <form onSubmit={handleSubmit(createProduct)}>
           <DashboardProductForm register={register} errors={errors} />
-          <DashboardSelectCategory register={register} errors={errors} />
+          <DashboardSelectCategory
+            register={register}
+            errors={errors}
+            selectedCategory={watch('category')}
+          />
 
           <SheetFooter>
             <SheetClose asChild>
@@ -122,9 +115,7 @@ export function DashboardAddProduct() {
             </Button>
           </SheetFooter>
         </form>
-        <div className="mt-10 mx-5">
-          <Separator />
-        </div>
+
         <DashboardAddCategory />
         <Toaster richColors />
       </SheetContent>

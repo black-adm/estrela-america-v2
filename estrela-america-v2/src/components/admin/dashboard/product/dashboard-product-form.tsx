@@ -56,7 +56,25 @@ export function DashboardProductForm({
           </span>
         )}
 
-        <div className="grid grid-cols-4 w-full items-center gap-2 px-1">
+        <div className="grid grid-cols-3 items-center gap-2 px-1">
+          <Label htmlFor="description" className="text-left">
+            Descrição
+          </Label>
+          <Textarea
+            placeholder="Descrição do produto"
+            className="col-span-3 placeholder:text-xs"
+            maxLength={80}
+            {...register('description')}
+          />
+        </div>
+        {errors.description && (
+          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
+            <Info className="h-4 w-4" />
+            {errors.description.message}
+          </span>
+        )}
+
+        <div className="grid grid-cols-4 w-full items-center gap-2 pt-2 px-1">
           <Label htmlFor="imageSrc" className="text-left">
             Imagem
           </Label>
@@ -87,24 +105,6 @@ export function DashboardProductForm({
           <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
             <Info className="h-4 w-4" />
             {errors.imageAlt.message}
-          </span>
-        )}
-
-        <div className="grid grid-cols-3 items-center gap-2 pt-2 px-1">
-          <Label htmlFor="description" className="text-left">
-            Descrição
-          </Label>
-          <Textarea
-            placeholder="Descrição do produto"
-            className="col-span-3 placeholder:text-xs"
-            maxLength={80}
-            {...register('description')}
-          />
-        </div>
-        {errors.description && (
-          <span className="pl-2 flex items-center gap-x-1.5 text-xs font-medium tracking-tight text-primary-red">
-            <Info className="h-4 w-4" />
-            {errors.description.message}
           </span>
         )}
       </div>
