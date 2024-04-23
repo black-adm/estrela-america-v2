@@ -32,7 +32,7 @@ import { format } from 'date-fns'
 import { ArrowUpDown } from 'lucide-react'
 import DashboardActions from './dashboard-acions'
 import DashboardFilters from './dashboard-filters'
-import { DashboardOperations } from './dashboard-operations'
+import DashboardOperations from './dashboard-operations'
 import { DashboardTableSkeleton } from './dashboard-table-skeleton'
 import { DashboardAddProduct } from './product/dashboard-add-product'
 
@@ -121,10 +121,14 @@ export const columns: ColumnDef<Products>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       const paymentId = row.original.sku
+      const children = [
+        <DashboardActions key="actions" paymentId={paymentId} />,
+        <DashboardOperations key="operations" />,
+      ]
+
       return (
         <div className="flex items-end justify-end text-black mr-3">
-          <DashboardActions paymentId={paymentId} />
-          <DashboardOperations />
+          {React.Children.map(children, (child) => child)}
         </div>
       )
     },

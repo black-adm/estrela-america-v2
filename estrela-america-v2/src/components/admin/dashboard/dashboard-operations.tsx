@@ -9,7 +9,7 @@ import {
 import { Settings2, Trash } from 'lucide-react'
 import { DashboardEditProduct } from './product/dashboard-edit-product'
 
-export function DashboardOperations() {
+const DashboardOperations = () => {
   return (
     <div>
       <DropdownMenu>
@@ -34,3 +34,5 @@ export function DashboardOperations() {
     </div>
   )
 }
+
+export default DashboardOperations
