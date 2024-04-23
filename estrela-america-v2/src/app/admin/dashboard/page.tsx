@@ -13,7 +13,7 @@ export default function AdminDashboard() {
   return (
     <>
       <DashboardHeader />
-      <div className="pt-16 px-5 max-w-7xl mx-auto w-full sm:pt-24 sm:px-0">
+      <div className="pt-16 px-5 max-w-7xl overflow-x-hidden mx-auto sm:pt-24 sm:px-0">
         <h1 className="inline-flex items-center gap-1.5 text-2xl font-bold py-4">
           Meu painel administrativo
         </h1>
