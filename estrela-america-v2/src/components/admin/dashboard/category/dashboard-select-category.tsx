@@ -22,7 +22,6 @@ export function DashboardSelectCategory({
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
-    console.log(event.target.value)
     register('category', { value: event.target.value })
   }
 

@@ -1,8 +1,11 @@
+'use client'
+
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-
 import { Textarea } from '@/components/ui/textarea'
+
 import { Info } from 'lucide-react'
+import { useState } from 'react'
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
 import { ValidateProductForm } from './dashboard-add-product'
 
@@ -11,10 +14,34 @@ interface DashboardProductFormProps {
   errors: FieldErrors<ValidateProductForm>
 }
 
+function formatPriceInput(value: string): string {
+  const numericString = value.replace(/\D/g, '')
+  if (numericString.length < 2) return value
+
+  const lastTwoDigits = numericString.slice(-2)
+  const numberPart = numericString.slice(0, -2)
+  const formattedNumber =
+    numberPart.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '.' + lastTwoDigits
+
+  return formattedNumber
+}
+
 export function DashboardProductForm({
   register,
   errors,
 }: DashboardProductFormProps) {
+  const [price, setPrice] = useState('')
+
+  const handleInputPriceChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const formattedValue = formatPriceInput(event.target.value)
+    setPrice(formattedValue)
+    register('price', {
+      value: formattedValue,
+    })
+  }
+
   return (
     <>
       <div className="grid gap-4 pt-8 pb-5">
@@ -38,8 +65,10 @@ export function DashboardProductForm({
             <Input
               placeholder="Valor"
               className="w-28 placeholder:text-xs"
+              inputMode="numeric"
               maxLength={8}
-              {...register('price')}
+              value={price}
+              onChange={handleInputPriceChange}
             />
           </div>
         </div>

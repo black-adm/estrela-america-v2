@@ -52,13 +52,11 @@ export function DashboardAddProduct() {
 
     await api
       .post('/products', formData)
-      .then((response) => {
-        console.log(response)
+      .then(() => {
         setIsLoading(false)
         toast.success('Produto cadastrado com sucesso!')
       })
-      .catch((error) => {
-        console.log(error)
+      .catch(() => {
         setIsLoading(false)
         toast.error('Erro ao cadastrar produto!')
       })
