@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import { CategoryService } from '@/services/category-service'
 import { ProductService } from '@/services/product-service'
 import { Product } from '@/types/product'
 import { useQuery } from '@tanstack/react-query'
@@ -21,12 +22,34 @@ export function CategoryBreadcrumb() {
   const formattedPathName = pathname.split('/')[3].replace(/-/g, ' ')
   const category = formattedPathName
 
-  const { data, isFetching, error } = useQuery({
-    queryKey: ['product-by-category'],
-    queryFn: async () => await ProductService.getByCategory(category),
+  const {
+    data: categoryData,
+    isLoading: isCategoryLoading,
+    error: categoryError,
+  } = useQuery({
+    queryKey: ['categories', category],
+    queryFn: async () => await CategoryService.getByName(category),
   })
 
-  if (!isFetching && error) {
+  if (!isCategoryLoading && categoryError) {
+    toast.error(`Ocorreu um erro ao buscar a categoria ${category}.`)
+  }
+
+  const categoryId =
+    categoryData && categoryData.length > 0 ? categoryData[0].id : null
+  console.log(categoryId)
+
+  const {
+    data: products,
+    isFetching: isProductsFetching,
+    error: productsError,
+  } = useQuery({
+    queryKey: ['product-by-category', categoryId],
+    queryFn: async () => await ProductService.getByCategory(categoryId),
+    enabled: !!categoryId,
+  })
+
+  if (!isProductsFetching && productsError) {
     toast.info('Nenhum produto cadastrado para essa categoria.')
   }
 
@@ -54,22 +77,24 @@ export function CategoryBreadcrumb() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      {data ? (
-        data.map((product: Product) => (
-          <>
-            <div key={product.id} className="py-7 flex flex-col gap-y-2">
-              <h2 className="text-2xl font-medium">Categoria {category}</h2>
+      <h2 className="pt-8 text-2xl font-medium">Categoria {category}</h2>
+      {products ? (
+        products.map((product: Product) => (
+          <div key={product.id}>
+            <div className="py-4 flex flex-col gap-y-2">
               <p className="text-sm text-muted-foreground">
                 Exibindo todos os{' '}
-                <strong className="text-black">67 resultados</strong>{' '}
+                <strong className="text-black">
+                  {categoryData.length} resultado(s)
+                </strong>{' '}
                 relacionados a esta categoria.
               </p>
             </div>
 
-            <main className="w-full flex justify-center items-center">
+            <main className="w-full pt-12 flex items-center">
               <ProductCard product={product} />
             </main>
-          </>
+          </div>
         ))
       ) : (
         <div className="py-8">
