@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 
 import './assets/css/globals.css'
+import { ReactQueryClientProvider } from './react-query'
 
 const ubuntu = Ubuntu({
   weight: ['300', '500', '700'],
@@ -20,8 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" className={ubuntu.className}>
-      <body>{children}</body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="pt-br" className={ubuntu.className}>
+        <body>{children}</body>
+      </html>
+    </ReactQueryClientProvider>
   )
 }

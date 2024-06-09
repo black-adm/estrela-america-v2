@@ -43,7 +43,7 @@ const categoriesAside = [
   },
 ]
 
-export function ProductCategoryAside() {
+export function CategoryAside() {
   return (
     <aside className="w-72 h-auto px-5">
       <ScrollArea className="h-full w-full border-r">

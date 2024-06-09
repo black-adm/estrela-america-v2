@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { Product } from '@/types/product'
 import { Button } from '../ui/button'
 import {
   DialogClose,
@@ -11,12 +12,7 @@ import { Input } from '../ui/input'
 import { ProductAvailable } from './product-available'
 
 interface ProductQuickViewProps {
-  selectedProduct: {
-    name: string
-    imageSrc: string
-    imageAlt: string
-    price: string
-  }
+  selectedProduct: Product
 }
 
 export function ProductQuickView({ selectedProduct }: ProductQuickViewProps) {
@@ -36,7 +32,7 @@ export function ProductQuickView({ selectedProduct }: ProductQuickViewProps) {
         <div className="pt-3 col-span-3">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-black sm:pr-12">
-              {selectedProduct.name}
+              {selectedProduct.nome}
             </DialogTitle>
           </DialogHeader>
 
@@ -47,7 +43,7 @@ export function ProductQuickView({ selectedProduct }: ProductQuickViewProps) {
                 <ProductAvailable />
               </div>
               <span className="flex items-center gap-2 text-3xl text-gray-900">
-                <p className="text-lg">R$</p> {selectedProduct.price}
+                <p className="text-lg">R$</p> {selectedProduct.preco}
               </span>
             </div>
           </div>

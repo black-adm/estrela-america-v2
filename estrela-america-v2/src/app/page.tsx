@@ -1,4 +1,4 @@
-import { ListCategories } from '@/components/category/list-categories'
+import { CategoriesOptions } from '@/components/category/categories-options'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header/header'
 import { BannerCarousel } from '@/components/marketing/banner-carousel'
@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <BannerCarousel />
         <ListProducts />
-        <ListCategories />
+        <CategoriesOptions />
         <ListCollections />
         <MostViewsProducts />
         <Slider />

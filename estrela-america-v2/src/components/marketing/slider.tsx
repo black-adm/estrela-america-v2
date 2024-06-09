@@ -70,8 +70,8 @@ export function Slider() {
                 {images.map((image, index) => (
                   <button
                     key={index}
-                    className={`w-3 h-3 mx-2 rounded-full md:mx-0 focus:outline-none hover:bg-black ${currentImage === index ? 'bg-black' : 'bg-orange-300'
-                      }`}
+                    className={`w-3 h-3 mx-2 rounded-full md:mx-0 focus:outline-none hover:bg-black 
+                      ${currentImage === index ? 'bg-black' : 'bg-orange-300'}`}
                     onClick={() => handleChange({ color: 'black', index })}
                   ></button>
                 ))}

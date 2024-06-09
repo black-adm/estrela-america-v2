@@ -1,3 +1,4 @@
+import { Product } from '@/types/product'
 import { LogoWhatsapp } from '../logo-whatsapp'
 import { Button } from '../ui/button'
 import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog'
@@ -5,12 +6,7 @@ import { ProductQuickView } from './product-quick-view'
 
 interface BuyProductButtonProps {
   onClick: () => void
-  selectedProduct: {
-    name: string
-    imageSrc: string
-    imageAlt: string
-    price: string
-  }
+  selectedProduct: Product
 }
 
 export function BuyProductButton({

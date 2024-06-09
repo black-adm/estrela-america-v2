@@ -39,7 +39,7 @@ const categoriesIcons = [
   },
 ]
 
-export function ListCategories() {
+export function CategoriesOptions() {
   return (
     <div className="py-8">
       <ProductContainerTitle
