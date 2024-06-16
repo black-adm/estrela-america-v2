@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Heart, ShoppingCart } from 'lucide-react'
 import { Suspense } from 'react'
 import { SocialBanner } from '../marketing/social-banner'
+import { Cart } from './cart'
+import { Favorites } from './favorites'
 import { Menu } from './menu'
 import { SearchInput } from './search-input'
 
@@ -28,13 +29,8 @@ export function Header() {
 
           <div className="flex items-center">
             <div className="flex gap-6">
-              <Link href="#" title="favoritos">
-                <Heart className="text-white size-5 lg:size-6 hover:fill-primary-red hover:text-primary-red" />
-              </Link>
-
-              <Link href="#" title="carrinho">
-                <ShoppingCart className="text-white size-5 lg:size-6 hover:fill-white" />
-              </Link>
+              <Cart />
+              <Favorites />
             </div>
           </div>
         </div>

@@ -1,13 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-
 import { CategoryService } from '@/services/category-service'
 import { ProductService } from '@/services/product-service'
 import { Product } from '@/types/product'
 import { useQuery } from '@tanstack/react-query'
+import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { toast } from 'sonner'
+import { ProductCardSkeleton } from '../product-card-skeleton'
 import { ProductCard } from '../products/product-card'
 import {
   Breadcrumb,
@@ -19,7 +20,10 @@ import {
 
 export function CategoryBreadcrumb() {
   const pathname = usePathname()
-  const formattedPathName = pathname.split('/')[3].replace(/-/g, ' ')
+  const formattedPathName = decodeURIComponent(pathname.split('/')[3]).replace(
+    /-/g,
+    ' ',
+  )
   const category = formattedPathName
 
   const {
@@ -78,28 +82,37 @@ export function CategoryBreadcrumb() {
       </Breadcrumb>
 
       <h2 className="pt-8 text-2xl font-medium">Categoria {category}</h2>
-      {products ? (
-        products.map((product: Product) => (
-          <div key={product.id}>
-            <div className="py-4 flex flex-col gap-y-2">
-              <p className="text-sm text-muted-foreground">
-                Exibindo todos os{' '}
-                <strong className="text-black">
-                  {categoryData.length} resultado(s)
-                </strong>{' '}
-                relacionados a esta categoria.
-              </p>
-            </div>
-
-            <main className="w-full pt-12 flex items-center">
-              <ProductCard product={product} />
-            </main>
+      {isCategoryLoading && isProductsFetching ? (
+        <ProductCardSkeleton />
+      ) : products && products.length > 0 ? (
+        <div>
+          <div className="py-4 flex flex-col gap-y-2">
+            <p className="text-sm text-muted-foreground">
+              Exibindo
+              <strong className="text-black">
+                {categoryData.length} resultado(s)
+              </strong>{' '}
+              relacionados a esta categoria.
+            </p>
           </div>
-        ))
+
+          <main className="w-full pt-12 flex items-center">
+            {products.map((product: Product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </main>
+        </div>
       ) : (
-        <div className="py-8">
-          <p className="font-medium">
-            Nenhum produto cadastrado para esta categoria.
+        <div>
+          <Image
+            className="w-1/2"
+            src="/search.png"
+            alt="search bro"
+            width={2000}
+            height={2000}
+          />
+          <p className="pt-2 font-medium text-muted-foreground">
+            Nenhum produto encontrado para esta categoria.
           </p>
         </div>
       )}

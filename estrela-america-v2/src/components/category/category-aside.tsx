@@ -31,7 +31,7 @@ const categoriesAside = [
   },
   {
     name: 'Relógios',
-    url: '/produtos/categoria/relogios',
+    url: '/produtos/categoria/relógios',
   },
   {
     name: 'Tecnologia',

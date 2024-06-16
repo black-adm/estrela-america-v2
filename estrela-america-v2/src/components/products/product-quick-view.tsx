@@ -42,8 +42,11 @@ export function ProductQuickView({ selectedProduct }: ProductQuickViewProps) {
               <div className="flex items-center">
                 <ProductAvailable />
               </div>
-              <span className="flex items-center gap-2 text-3xl text-gray-900">
-                <p className="text-lg">R$</p> {selectedProduct.preco}
+              <span className="flex items-center gap-2 text-2xl text-gray-900">
+                {new Intl.NumberFormat('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                }).format(selectedProduct.preco)}
               </span>
             </div>
           </div>
