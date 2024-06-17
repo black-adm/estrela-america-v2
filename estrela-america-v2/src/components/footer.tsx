@@ -58,14 +58,7 @@ export function Footer() {
 
             <div className="flex mt-3 -mx-2 sm:mt-0">
               <a
-                href="#"
-                target="_blank"
-                className="mx-2 text-xs text-white transition-colors duration-300 hover:underline hover:text-light-blue"
-              >
-                Quem somos
-              </a>
-              <a
-                href="#"
+                href="https://www.google.com/maps/place/Estrela+Am%C3%A9rica+do+Sul/@-23.5428382,-46.6348557,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5855fc3698cf:0xe0d2e62084a0caec!8m2!3d-23.5428382!4d-46.6322808!16s%2Fg%2F1pp2vmwd_?entry=ttu"
                 target="_blank"
                 className="mx-2 text-xs text-white transition-colors duration-300 hover:underline hover:text-light-blue"
               >

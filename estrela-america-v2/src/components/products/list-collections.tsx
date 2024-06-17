@@ -32,7 +32,7 @@ export function ListCollections() {
       <ProductContainerTitle
         title="Conheça as nossas"
         titleStrong="coleções"
-        navigate="#"
+        navigate="/colecoes"
       />
       <div className="pt-5 mx-auto max-w-6xl px-4 sm:mt-0 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-6">
